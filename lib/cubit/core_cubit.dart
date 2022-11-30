@@ -25,4 +25,8 @@ class CoreCubit extends Cubit<CoreState> {
   Future<void> switchLanguage() async {
     emit(state.copyWith(en: !state.en));
   }
+
+  Future<void> changeActivePageIndex(int index) async {
+    emit(state.copyWith(activePageIndex: index));
+  }
 }

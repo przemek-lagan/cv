@@ -2,7 +2,7 @@ import 'package:cv/cubit/core_cubit.dart';
 import 'package:cv/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,15 +20,9 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<CoreCubit, CoreState>(
         builder: (context, coreState) {
           return MaterialApp(
-            localizationsDelegates: const [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: const [
-              Locale('pl', ''), // English, no country code
-              Locale('en', ''), // Spanish, no country code
-            ],
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            locale: coreState.en ? const Locale('en') : const Locale('pl'),
             debugShowCheckedModeBanner: false,
             title: 'Przemysław Łagan',
             theme: ThemeData(
