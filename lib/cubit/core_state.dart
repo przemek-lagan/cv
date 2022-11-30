@@ -2,16 +2,20 @@
 part of 'core_cubit.dart';
 
 class CoreState {
-  final bool darkMode;
+  final ThemeMode? themeMode; 
+  final bool en;
   CoreState({
-    this.darkMode = false,
+    this.themeMode,
+    this.en = false,
   });
 
   CoreState copyWith({
-    bool? darkMode,
+    ThemeMode? themeMode,
+    bool? en,
   }) {
     return CoreState(
-      darkMode: darkMode ?? this.darkMode,
+      themeMode: themeMode ?? this.themeMode,
+      en: en ?? this.en,
     );
   }
 }

@@ -8,6 +8,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool platformDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
     return BlocBuilder<CoreCubit, CoreState>(
       builder: (context, coreState) {
         return Scaffold(
@@ -15,31 +17,51 @@ class HomePage extends StatelessWidget {
             actions: [
               const IconButton(onPressed: null, icon: Icon(Icons.light_mode)),
               Switch(
-                  value: coreState.darkMode,
-                  onChanged: (_) => context.read<CoreCubit>().switchTheme()),
+                  value: coreState.themeMode == null
+                      ? platformDarkMode
+                      : coreState.themeMode == ThemeMode.dark,
+                  onChanged: (_) =>
+                      context.read<CoreCubit>().changeTheme(platformDarkMode)),
               const IconButton(onPressed: null, icon: Icon(Icons.dark_mode)),
-              const SizedBox(width: 16),
+              const SizedBox(width: 32),
               const Center(),
-              IntrinsicHeight(
+              // TODO prettify button highlight
+              InkWell(
+                onTap: () => context.read<CoreCubit>().switchLanguage(),
                 child: SizedBox(
                   width: 32,
-                  child: Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: [
-                      const Text(
-                        'PL',
-                        style: TextStyle(backgroundColor: Colors.green),
-                      ),
-                      Positioned(
-                        bottom: 10,
-                        right: 0,
-                        child: Text(
-                          'EN',
-                          style:
-                              TextStyle(color: Theme.of(context).disabledColor),
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 2000),
+                    transitionBuilder: (widget, animation) => SizeTransition(
+                      axisAlignment: 1.0,
+                      sizeFactor: animation,
+                      child: widget,
+                    ),
+                    child: Stack(
+                      alignment: AlignmentDirectional.center,
+                      children: [
+                        Positioned(
+                          key: UniqueKey(),
+                          bottom: 10,
+                          right: 0,
+                          child: Text(
+                            coreState.en ? '🇵🇱' : '🇬🇧',
+                            style: TextStyle(
+                                color: Theme.of(context).disabledColor,
+                                fontSize: 20),
+                          ),
                         ),
-                      ),
-                    ],
+                        Positioned(
+                          key: UniqueKey(),
+                          top: 15,
+                          left: 0,
+                          child: Text(
+                            coreState.en ? '🇬🇧' : '🇵🇱',
+                            style: const TextStyle(fontSize: 20),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
