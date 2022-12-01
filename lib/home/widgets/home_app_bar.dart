@@ -35,7 +35,6 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
                     onPressed: null, icon: Icon(Icons.dark_mode))),
             const SizedBox(width: 32),
             const Center(),
-            // TODO prettify button highlight
             InkWell(
               radius: 60,
               customBorder: const CircleBorder(),

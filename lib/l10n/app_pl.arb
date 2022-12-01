@@ -10,11 +10,15 @@
     "contact_title": "Kontakt",
     "e_mail": "przemek.lagan.dev@gmail.com",
     "e_mail_copied": "skopiowano adres e-mail do schowka",
+    "phone": "telefon",
     "phone_number": "+48 515 077 600",
-    "whatsapp_phone_link": "https://wa.me/48515077600",
+    "whatsapp_link": "https://wa.me/48515077600",
+    "whatsapp_link_short": "wa.me/48515077600",
     "github_name": "przemek-lagan",
-    "linkedIn_link": "https://www.linkedin.com/in/przemysław-łagan-76259224b/",
-    "messenger_link": "https://m.me/przemeklagan"
+    "linkedIn_link": "https://www.linkedin.com/in/przemysław-łagan-76259224b",
+    "linkedIn_link_short": "linkedin.com/in/przemysław-łagan-76259224b",
+    "messenger_link": "https://m.me/przemeklagan",
+    "messenger_link_short": "m.me/przemeklagan"
 
 
 

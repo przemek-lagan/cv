@@ -72,8 +72,10 @@ class NavigationDrawer extends StatelessWidget {
                   ),
                 ),
               ),
-              const ContactActions(),
-              const SizedBox(height: 8)
+              if (isDrawer == false) ...[
+                const ContactActions(),
+                const SizedBox(height: 32)
+              ],
             ],
           ),
         );

@@ -35,7 +35,7 @@ class ContactActions extends StatelessWidget {
         IconButton(
           tooltip: 'WhatsApp: ${t.phone_number}',
           onPressed: () async {
-            await launchUrlString(t.whatsapp_phone_link);
+            await launchUrlString(t.whatsapp_link);
           },
           icon: const Icon(SimpleIcons.whatsapp),
         ),

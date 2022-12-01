@@ -16,6 +16,7 @@ class HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(16),
       constraints: const BoxConstraints(maxWidth: 600),
       child: ScrollConfiguration(
         behavior: ScrollConfiguration.of(context).copyWith(
