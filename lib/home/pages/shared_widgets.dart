@@ -24,10 +24,10 @@ class PageTitle extends StatelessWidget {
 }
 
 class TableCell1 extends StatelessWidget {
-  final String label;
+  final String text;
   final bool bold;
   const TableCell1({
-    required this.label,
+    required this.text,
     this.bold = false,
     Key? key,
   }) : super(key: key);
@@ -35,8 +35,37 @@ class TableCell1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      label,
+      text,
       style: TextStyle(fontSize: 16, fontWeight: bold ? FontWeight.bold : null),
+    );
+  }
+}
+
+class TableCell2Bullet extends StatelessWidget {
+  final String text;
+
+  const TableCell2Bullet({
+    required this.text,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 4.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('-  ', style: TextStyle(fontSize: 16)),
+          Flexible(
+            child: Text(
+              text,
+              style: const TextStyle(fontSize: 16),
+              softWrap: true,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

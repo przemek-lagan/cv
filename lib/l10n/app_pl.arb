@@ -2,6 +2,22 @@
     "about_me_title": "O mnie",
 
     "work_title": "Doświadczenie zawodowe",
+    "work1_date1": "03.2006 ÷",
+    "work1_date2": "12.2022",
+    "work1_title": "PPH Chemadex Projekt Sp. z o.o.",
+    "work1_role": "Starszy projektant",
+    "work1_resp": "Najważniejsze obowiązki:",
+    "work1_resp1": "zbieranie założeń i uzgodnienia z klientami",
+    "work1_resp2": "wykonywanie dokumentacji technicznej i instrukcji obsługi",
+    "work1_resp3": "automatyzacja arkuszy obliczeniowych dla obliczeń mechanicznych i technologicznych",
+    "work1_resp4": "wsparcie techniczne dot. problemów komputerowych (\"dziwne, u mnie działa...\")",
+    "work2_title": "Flutter Developer",
+    "work2_date1": "03.2022 ÷",
+    "work2_date2": "obecnie",
+    "work2_resp1": "hobbystyczne tworzenie aplikacji mobilnych",
+    "work2_resp2": "od 08.2022 - aplikacja komercyjna",
+    "work2_resp2a": "→ Projekty",
+
 
     "education_title": "Wykształcenie",
     "education2_title": "Politechnika Krakowska",

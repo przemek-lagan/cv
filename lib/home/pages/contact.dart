@@ -20,42 +20,42 @@ class ContactPage extends StatelessWidget {
           children: [
             TableRow(
               children: [
-                const TableCell1(label: 'e-mail:'),
+                const TableCell1(text: 'e-mail:'),
                 TableCell2SelectableText(label: t.e_mail),
               ],
             ),
             TableRow(children: [const SizedBox(height: 16), Container()]),
             TableRow(
               children: [
-                TableCell1(label: '${t.phone}:'),
+                TableCell1(text: '${t.phone}:'),
                 TableCell2SelectableText(label: t.phone_number),
               ],
             ),
             TableRow(children: [const SizedBox(height: 16), Container()]),
             TableRow(
               children: [
-                const TableCell1(label: 'WhatsApp:'),
+                const TableCell1(text: 'WhatsApp:'),
                 TableCell2SelectableText(label: t.whatsapp_link_short),
               ],
             ),
             TableRow(children: [const SizedBox(height: 16), Container()]),
             TableRow(
               children: [
-                const TableCell1(label: 'GitHub:'),
+                const TableCell1(text: 'GitHub:'),
                 TableCell2SelectableText(label: 'github.com/${t.github_name}'),
               ],
             ),
             TableRow(children: [const SizedBox(height: 16), Container()]),
             TableRow(
               children: [
-                const TableCell1(label: 'LinkedIn:'),
+                const TableCell1(text: 'LinkedIn:'),
                 TableCell2SelectableText(label: t.linkedIn_link_short),
               ],
             ),
             TableRow(children: [const SizedBox(height: 16), Container()]),
             TableRow(
               children: [
-                const TableCell1(label: 'messenger:'),
+                const TableCell1(text: 'messenger:'),
                 TableCell2SelectableText(label: t.messenger_link_short),
               ],
             ),
@@ -65,8 +65,6 @@ class ContactPage extends StatelessWidget {
     );
   }
 }
-
-
 
 class TableCell2SelectableText extends StatelessWidget {
   final String label;

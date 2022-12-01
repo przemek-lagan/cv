@@ -20,11 +20,11 @@ class EducationPage extends StatelessWidget {
           children: [
             TableRow(
               children: [
-                const TableCell1(label: '2000 ÷ 2005'),
+                const TableCell1(text: '2000 ÷ 2005'),
                 Row(
                   children: [
-                    TableCell1(label: t.education2_title, bold: true),
-                    TableCell1(label: ' ${t.education2_title_secondary}'),
+                    TableCell1(text: t.education2_title, bold: true),
+                    TableCell1(text: ' ${t.education2_title_secondary}'),
                   ],
                 ),
               ],
@@ -33,21 +33,21 @@ class EducationPage extends StatelessWidget {
             TableRow(
               children: [
                 Container(),
-                TableCell1(label: t.education2_field),
+                TableCell1(text: t.education2_field),
               ],
             ),
             TableRow(children: [const SizedBox(height: 4), Container()]),
             TableRow(
               children: [
                 Container(),
-                TableCell1(label: t.education2_specialty),
+                TableCell1(text: t.education2_specialty),
               ],
             ),
             TableRow(children: [const SizedBox(height: 4), Container()]),
             TableRow(
               children: [
                 Container(),
-                TableCell1(label: t.education2_degree),
+                TableCell1(text: t.education2_degree),
               ],
             ),
           ],
