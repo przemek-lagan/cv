@@ -1,3 +1,4 @@
+import 'package:cv/home/pages/shared_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -13,7 +14,7 @@ class ContactPage extends StatelessWidget {
         Table(
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
           columnWidths: const {
-            0: FlexColumnWidth(1),
+            0: IntrinsicColumnWidth(flex: 1),
             1: FlexColumnWidth(4),
           },
           children: [
@@ -65,21 +66,7 @@ class ContactPage extends StatelessWidget {
   }
 }
 
-class TableCell1 extends StatelessWidget {
-  final String label;
-  const TableCell1({
-    required this.label,
-    Key? key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      label,
-      style: const TextStyle(fontSize: 16),
-    );
-  }
-}
 
 class TableCell2SelectableText extends StatelessWidget {
   final String label;
@@ -93,28 +80,6 @@ class TableCell2SelectableText extends StatelessWidget {
     return SelectableText(
       label,
       style: const TextStyle(fontSize: 16),
-    );
-  }
-}
-
-class PageTitle extends StatelessWidget {
-  const PageTitle({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-        ),
-        const SizedBox(height: 16),
-      ],
     );
   }
 }

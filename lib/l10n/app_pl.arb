@@ -1,11 +1,18 @@
 {
     "about_me_title": "O mnie",
 
-    "projects_title": "Projekty",
+    "work_title": "Doświadczenie zawodowe",
+
+    "education_title": "Wykształcenie",
+    "education2_title": "Politechnika Krakowska",
+    "education2_title_secondary": "im. Tadeusza Kościuszki",
+    "education2_field": "Kierunek: Inżynieria Chemiczna i Procesowa",
+    "education2_specialty": "Specjalizacja: Techniki komputerowe w inżynierii i technologii chemicznej",
+    "education2_degree": "Uzyskany tytuł magistra inżyniera",
 
     "skills_title": "Umiejętności",
 
-    "education_title": "Wykształcenie",
+    "projects_title": "Projekty",
 
     "contact_title": "Kontakt",
     "e_mail": "przemek.lagan.dev@gmail.com",
