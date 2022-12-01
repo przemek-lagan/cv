@@ -1,13 +1,14 @@
 {
-    "about_me_title": "About me",
+    "about_me_title": "O mnie",
 
-    "projects_title": "Projects",
+    "projects_title": "Projekty",
 
-    "skills_title": "Skills",
+    "skills_title": "Umiejętności",
 
-    "education_title": "Education",
+    "education_title": "Wykształcenie",
 
-    "contact_title": "Contact"
+    "contact_title": "Kontakt",
+    "e_mail": "przemek.lagan.dev@gmail.com"
 
 
 }

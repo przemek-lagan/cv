@@ -7,7 +7,15 @@
 
     "education_title": "Wykształcenie",
 
-    "contact_title": "Kontakt"
+    "contact_title": "Kontakt",
+    "e_mail": "przemek.lagan.dev@gmail.com",
+    "e_mail_copied": "skopiowano adres e-mail do schowka",
+    "phone_number": "+48 515 077 600",
+    "whatsapp_phone_link": "https://wa.me/48515077600",
+    "github_name": "przemek-lagan",
+    "linkedIn_link": "https://www.linkedin.com/in/przemysław-łagan-76259224b/",
+    "messenger_link": "https://m.me/przemeklagan"
+
 
 
 }
