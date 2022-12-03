@@ -10,7 +10,6 @@ class ContactPage extends StatelessWidget {
     var t = AppLocalizations.of(context);
     return Column(
       children: [
-        PageTitle(title: t!.contact_title),
         Table(
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
           columnWidths: const {
@@ -21,38 +20,38 @@ class ContactPage extends StatelessWidget {
             TableRow(
               children: [
                 const TableCell1(text: 'e-mail:'),
-                TableCell2SelectableText(label: t.e_mail),
+                TableCell2SelectableText(label: t!.e_mail),
               ],
             ),
-            TableRow(children: [const SizedBox(height: 16), Container()]),
+            const TableRow(children: [SizedBox(height: 16), SizedBox()]),
             TableRow(
               children: [
                 TableCell1(text: '${t.phone}:'),
                 TableCell2SelectableText(label: t.phone_number),
               ],
             ),
-            TableRow(children: [const SizedBox(height: 16), Container()]),
+            const TableRow(children: [SizedBox(height: 16), SizedBox()]),
             TableRow(
               children: [
                 const TableCell1(text: 'WhatsApp:'),
                 TableCell2SelectableText(label: t.whatsapp_link_short),
               ],
             ),
-            TableRow(children: [const SizedBox(height: 16), Container()]),
+            const TableRow(children: [SizedBox(height: 16), SizedBox()]),
             TableRow(
               children: [
                 const TableCell1(text: 'GitHub:'),
                 TableCell2SelectableText(label: 'github.com/${t.github_name}'),
               ],
             ),
-            TableRow(children: [const SizedBox(height: 16), Container()]),
+            const TableRow(children: [SizedBox(height: 16), SizedBox()]),
             TableRow(
               children: [
                 const TableCell1(text: 'LinkedIn:'),
                 TableCell2SelectableText(label: t.linkedIn_link_short),
               ],
             ),
-            TableRow(children: [const SizedBox(height: 16), Container()]),
+            const TableRow(children: [SizedBox(height: 16), SizedBox()]),
             TableRow(
               children: [
                 const TableCell1(text: 'messenger:'),

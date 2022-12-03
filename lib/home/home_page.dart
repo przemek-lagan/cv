@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PageList.init(context);
+    Global.init(context);
     return const ResponsiveLayout(
       narrow: HomePageNarrow(),
       standard: HomePageStandard(),
@@ -30,15 +30,15 @@ class HomePageNarrow extends StatelessWidget {
     return BlocBuilder<CoreCubit, CoreState>(
       builder: (context, coreState) {
         final PageController pageController = PageController(
-            initialPage:
-                1); // coreState.activePageIndex); TODO TODO TODO TODO TODO TODO TODO
-
+            initialPage: coreState
+                .activePageIndex); // coreState.activePageIndex); TODO TODO TODO TODO TODO TODO TODO
+        context.read<CoreCubit>().setPageController(pageController);
         return Scaffold(
           appBar: const HomeAppBar(),
           bottomNavigationBar: BottomAppBar(
               child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: const [ContactActions()],
+            children: const [Spacer(), ContactActions()],
           )),
           drawer: Drawer(
             child: NavigationDrawer(
@@ -67,25 +67,31 @@ class HomePageStandard extends StatelessWidget {
       builder: (context, coreState) {
         final PageController pageController =
             PageController(initialPage: coreState.activePageIndex);
+
+        context.read<CoreCubit>().setPageController(pageController);
+
         return Scaffold(
           body: Row(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               NavigationDrawer(
                 key: const Key('drawer'),
                 controller: pageController,
                 isDrawer: false,
               ),
+              Spacer(flex: 1 * coreState.scaleFactor.flex),
               Expanded(
-                  child: HomePageBody(
-                pageController: pageController,
-                key: const Key('body'),
-              )),
+                flex: 10,
+                child: HomePageBody(
+                  pageController: pageController,
+                  key: const Key('body'),
+                ),
+              ),
+              Spacer(flex: 1 * coreState.scaleFactor.flex),
               const RotatedBox(
                 quarterTurns: 1,
                 child: HomeAppBar(rotated: true),
-              )
+              ),
             ],
           ),
         );

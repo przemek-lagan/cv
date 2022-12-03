@@ -1,8 +1,12 @@
 import 'package:cv/cubit/core_cubit.dart';
 import 'package:cv/home/home_page.dart';
+import 'package:cv/home/pages/education.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+// TODO platform-dependend controls (touch/wheel)
+// TODO platform/size-dependend layouts & fonts
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +24,8 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<CoreCubit, CoreState>(
         builder: (context, coreState) {
           return MaterialApp(
+            routes: {'/test': (context) => const EducationPage()},
+            useInheritedMediaQuery: true,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             locale: coreState.en ? const Locale('en') : const Locale('pl'),

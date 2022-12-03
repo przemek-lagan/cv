@@ -44,10 +44,10 @@ class NavigationDrawer extends StatelessWidget {
                   ),
                   child: ListView(
                     shrinkWrap: true,
-                    children: PageList.titles.map((e) {
-                      int index = PageList.titles.indexOf(e);
+                    children: Global.titles.map((e) {
+                      int index = Global.titles.indexOf(e);
                       return ListTile(
-                        leading: PageList.icons[index],
+                        leading: Global.icons[index],
                         selected: index == coreState.activePageIndex,
                         title: Text(e),
                         onTap: () {

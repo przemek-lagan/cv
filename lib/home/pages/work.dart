@@ -1,5 +1,8 @@
+import 'package:cv/cubit/core_cubit.dart';
+import 'package:cv/home/pages/global.dart';
 import 'package:cv/home/pages/shared_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WorkPage extends StatelessWidget {
@@ -10,7 +13,6 @@ class WorkPage extends StatelessWidget {
     var t = AppLocalizations.of(context);
     return Column(
       children: [
-        PageTitle(title: t!.work_title),
         Table(
           defaultVerticalAlignment: TableCellVerticalAlignment.top,
           columnWidths: const {
@@ -20,7 +22,7 @@ class WorkPage extends StatelessWidget {
           children: [
             TableRow(
               children: [
-                TableCell1(text: t.work2_date1),
+                TableCell1(text: t!.work2_date1),
                 Row(
                   children: [
                     TableCell1(text: t.work2_title, bold: true),
@@ -39,15 +41,26 @@ class WorkPage extends StatelessWidget {
               ],
             ),
             TableRow(children: [
-              Container(),
+              const SizedBox(),
               TableCell2Bullet(text: t.work2_resp2),
             ]),
             TableRow(children: [
-              Container(),
+              const SizedBox(),
               Align(
                 alignment: Alignment.topLeft,
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      final PageController controller =
+                          context.read<CoreCubit>().state.pageController ??
+                              PageController();
+                      final int thisIndex = Global.pages.indexOf(this);
+                      final int workIndex =
+                          Global.titles.indexOf(t.projects_title);
+                      final int diff = (thisIndex - workIndex).abs();
+                      controller.animateToPage(workIndex,
+                          duration: Duration(milliseconds: 200 * diff),
+                          curve: Curves.easeInOutCubic);
+                    },
                     child: TableCell1(
                       text: t.work2_resp2a,
                     )),
@@ -85,10 +98,10 @@ class WorkPage extends StatelessWidget {
                 ),
               ],
             ),
-            TableRow(children: [const SizedBox(height: 8), Container()]),
+            const TableRow(children: [SizedBox(height: 8), SizedBox()]),
             TableRow(
               children: [
-                Container(),
+                const SizedBox(),
                 Row(
                   children: [
                     TableCell1(text: t.work1_resp),
@@ -97,19 +110,19 @@ class WorkPage extends StatelessWidget {
               ],
             ),
             TableRow(children: [
-              Container(),
+              const SizedBox(),
               TableCell2Bullet(text: t.work1_resp1),
             ]),
             TableRow(children: [
-              Container(),
+              const SizedBox(),
               TableCell2Bullet(text: t.work1_resp2),
             ]),
             TableRow(children: [
-              Container(),
+              const SizedBox(),
               TableCell2Bullet(text: t.work1_resp3),
             ]),
             TableRow(children: [
-              Container(),
+              const SizedBox(),
               TableCell2Bullet(text: t.work1_resp4),
             ]),
           ],

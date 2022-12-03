@@ -1,7 +1,7 @@
 {
     "about_me_title": "O mnie",
 
-    "work_title": "Doświadczenie zawodowe",
+    "work_title": "Doświadczenie zawodowe i wykształcenie",
     "work1_date1": "03.2006 ÷",
     "work1_date2": "12.2022",
     "work1_title": "PPH Chemadex Projekt Sp. z o.o.",
@@ -27,6 +27,22 @@
     "education2_degree": "Uzyskany tytuł magistra inżyniera",
 
     "skills_title": "Umiejętności",
+    "skills_lang_title": "Języki obce",
+    "skills_lang1_title": "język angielski",
+    "skills_lang1_level": "zaawansowany",
+    "skills_lang1_cert1": "EF SET English Certificate 81/100 (C2\u00A0Proficient)",
+    "skills_lang1_cert1_link": "https://www.efset.org/cert/mSSkU2",
+    "skills_lang1_cert1_link_descritpion": "pokaż poświadczenie",
+    "skills_lang1_cert2": "EF SET speaking test (beta) 18/30 (B2\u00A0Upper Intermediate)",
+    "skills_dev_title": "Programowanie",
+    "skills_dev_title_tooltip": "Umiejętności określono w nieobiektywnej skali\npoczątkującego dewelopera, gdzie:\n1*  -  \"użyłem, wklejając gotowy przykład\n         ze Stack Overflow i zmieniając parę linijek\"\n5*  -  \"umiem w miarę szybko napisać kod,\n         posiłkując się Google i moimi wcześniejszymi programami\"\n\n¯\\_(ツ)_/¯",
+    "skills_dev_past": "Używane\u00A0w\u00A0przeszłości\n(do\u00A0odświeżenia)",
+    "skills_other_title": "Pozostałe",
+    "skills_other_skill1": "AutoCAD\n(z podstawami 3D)",
+    "skills_goals_title": "Na celowniku",
+    "skills_goals_title2": "(plany edukacyjne na najbliższe wolne chwile)",
+    "skills_goals_tests": "testy",
+
 
     "projects_title": "Projekty",
 

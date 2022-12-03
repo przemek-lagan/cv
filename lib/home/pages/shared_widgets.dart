@@ -14,7 +14,7 @@ class PageTitle extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
         ),
         const Divider(),
         const SizedBox(height: 16),
@@ -43,9 +43,11 @@ class TableCell1 extends StatelessWidget {
 
 class TableCell2Bullet extends StatelessWidget {
   final String text;
+  final bool skipBullet;
 
   const TableCell2Bullet({
     required this.text,
+    this.skipBullet = false,
     Key? key,
   }) : super(key: key);
 
@@ -56,7 +58,8 @@ class TableCell2Bullet extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('-  ', style: TextStyle(fontSize: 16)),
+          Text(skipBullet ? '   ' : '-  ',
+              style: const TextStyle(fontSize: 16)),
           Flexible(
             child: Text(
               text,
