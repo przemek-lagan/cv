@@ -4,6 +4,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+List<dynamic> skills = [
+  // [0] - name,
+  // [1] - skill level (negative for old skills, needing some work to refresh)
+  // [2] - is important for development?
+  ['Flutter', 10, true],
+  ['Dart', 8, true],
+  ['BLoC (Cubit)', 9, true],
+  ['Firebase', 9, true],
+  ['Freezed', 7, true],
+  ['Node.js', 3, true],
+  ['Git', 8, true],
+  ['iOS development', 3, true],
+  ['CI/CD', 1, true],
+  ['Python', -5, true],
+  ['SQLite', -4, true],
+  ['Visual Basic / VBA', -7, true],
+  ['AutoCAD', 10, false],
+  ['Lisp', -2, true],
+  ['Google Apps Script', -2, true],
+  ['Excel', 10, false],
+  ['Google Sheets', 8, false],
+  ['Sketchup 3D', -8, false]
+];
+
 class SkillsPage extends StatelessWidget {
   const SkillsPage({super.key});
 

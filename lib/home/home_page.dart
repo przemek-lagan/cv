@@ -30,8 +30,8 @@ class HomePageNarrow extends StatelessWidget {
     return BlocBuilder<CoreCubit, CoreState>(
       builder: (context, coreState) {
         final PageController pageController = PageController(
-            initialPage: coreState
-                .activePageIndex); // coreState.activePageIndex); TODO TODO TODO TODO TODO TODO TODO
+            initialPage:
+                2); // coreState.activePageIndex); TODO TODO TODO TODO TODO TODO TODO
         context.read<CoreCubit>().setPageController(pageController);
         return Scaffold(
           appBar: const HomeAppBar(),

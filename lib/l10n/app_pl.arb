@@ -1,5 +1,9 @@
 {
-    "about_me_title": "O mnie",
+    "about_title": "O mnie",
+    "about_hi": "Cześć, jestem Przemek",
+    "about_my_title": "Początkujący Flutter Developer",
+    "about_info1": "Od wielu lat moim głównym hobby jest nauka nowych języków programowania i tworzenie progamów na własne potrzeby, a od marca 2022 zajmuję się przede wszystkim Flutterem.",
+    "about_info2": "W wolnych chwilach jeżdżę na rolkach, próbuję grać na pianinie, słucham krasnoludzkiego power metalu i tworzę rymy niskich lotów.",
     
     "skills_title": "Umiejętności",
     "skills_lang_title": "Języki obce",

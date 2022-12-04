@@ -1,5 +1,4 @@
 import 'package:cv/cubit/core_cubit.dart';
-import 'package:cv/home/pages/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,22 +24,22 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
           actions: [
             const Spacer(),
             const Spacer(),
-            RotatedBox(
-              quarterTurns: rotated ? 3 : 0,
-              child: Icon(
-                Global.isMobile ? Icons.phone_android : Icons.desktop_windows,
-                color: Theme.of(context).disabledColor,
-              ),
-            ),
-            Center(
-              child: RotatedBox(
-                quarterTurns: rotated ? 3 : 0,
-                child: Text(
-                  Global.isWeb ? ' web' : ' app',
-                  style: TextStyle(color: Theme.of(context).disabledColor),
-                ),
-              ),
-            ),
+            // RotatedBox(
+            //   quarterTurns: rotated ? 3 : 0,
+            //   child: Icon(
+            //     Global.isMobile ? Icons.phone_android : Icons.desktop_windows,
+            //     color: Theme.of(context).disabledColor,
+            //   ),
+            // ),
+            // Center(
+            //   child: RotatedBox(
+            //     quarterTurns: rotated ? 3 : 0,
+            //     child: Text(
+            //       Global.isWeb ? ' web' : ' app',
+            //       style: TextStyle(color: Theme.of(context).disabledColor),
+            //     ),
+            //   ),
+            // ),
             const Spacer(),
             const IconButton(onPressed: null, icon: Icon(Icons.light_mode)),
             Switch(

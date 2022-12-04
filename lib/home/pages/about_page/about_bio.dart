@@ -31,7 +31,7 @@ class _AboutBioState extends State<AboutBio> {
               indentSpan(widget.scaleFactor),
               const TextSpan(
                   // style: Theme.of(context).textTheme.bodyText1,
-                  text: 'Rozpocząłem swoją karierę jako inżynier chemik, '
+                  text: 'Rozpocząłem karierę jako inżynier chemik, '
                       'jednak szybko odkryłem że pociąga mnie kodowanie, '
                       'które wkrótce stało się moim '),
               tooltipSpan(
@@ -136,7 +136,7 @@ class _AboutBioState extends State<AboutBio> {
               ),
               indentSpan(widget.scaleFactor),
               const TextSpan(
-                text: 'W końcu, szukając sposobu na opracowanie aplikacji '
+                text: 'Szukając sposobu na opracowanie aplikacji '
                     'mobilnej, trafiłem na Fluttera i postanowiłem zostać z nim na dłużej.',
               ),
             ],

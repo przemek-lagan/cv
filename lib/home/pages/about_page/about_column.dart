@@ -1,8 +1,8 @@
 import 'package:cv/cubit/core_cubit.dart';
-import 'package:cv/home/pages/global.dart';
 import 'package:cv/home/pages/shared_widgets/indent_span.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutColumn extends StatelessWidget {
   const AboutColumn({
@@ -11,6 +11,7 @@ class AboutColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var t = AppLocalizations.of(context);
     return BlocBuilder<CoreCubit, CoreState>(
       builder: (context, coreState) {
         return Column(
@@ -21,7 +22,7 @@ class AboutColumn extends StatelessWidget {
               TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Cześć, jestem Przemek',
+                    text: t!.about_hi,
                     style: TextStyle(
                         fontSize: 18,
                         color: Theme.of(context)
@@ -37,26 +38,18 @@ class AboutColumn extends StatelessWidget {
                       padding:
                           EdgeInsets.only(top: 4 * coreState.scaleFactor.value),
                       child: Text.rich(
-                          textScaleFactor: coreState.scaleFactor.correctionValue,
-                          const TextSpan(
-                              text: 'Początkujący Flutter Developer')),
+                          textScaleFactor:
+                              coreState.scaleFactor.correctionValue,
+                          TextSpan(text: t.about_my_title)),
                     ),
                   ),
                   // const TextSpan(text: 'Początkujący Flutter Developer'),
                   const TextSpan(text: '\n\n'),
                   indentSpan(coreState.scaleFactor),
-                  const TextSpan(
-                      text: 'Od wielu lat moim głównym hobby jest nauka nowych '
-                          'języków programowania i tworzenie progamów na '
-                          'własne potrzeby, a od marca 2022 zajmuję się '
-                          'przede wszystkim Flutterem.'),
+                  TextSpan(text: t.about_info1),
                   const TextSpan(text: '\n'),
                   indentSpan(coreState.scaleFactor),
-                  const TextSpan(
-                      text:
-                          'W wolnych chwilach jeżdżę na rolkach, próbuję grać '
-                          'na pianinie, słucham krasnoludzkiego'
-                          ' power metalu i tworzę rymy niskich lotów.'),
+                  TextSpan(text: t.about_info2),
                 ],
               ),
             ),

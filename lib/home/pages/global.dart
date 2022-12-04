@@ -30,7 +30,7 @@ class Global {
   static void init(BuildContext context) {
     var t = AppLocalizations.of(context);
     titles = [
-      t!.about_me_title,
+      t!.about_title,
       t.skills_title,
       t.projects_title,
       t.contact_title
