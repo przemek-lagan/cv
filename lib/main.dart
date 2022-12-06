@@ -1,5 +1,5 @@
 import 'package:cv/cubit/core_cubit.dart';
-import 'package:cv/home/home_page.dart';
+import 'package:cv/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CoreCubit(),
+      create: (context) => CoreCubit()..init(),
       child: BlocBuilder<CoreCubit, CoreState>(
         builder: (context, coreState) {
           return MaterialApp(

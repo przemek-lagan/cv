@@ -10,20 +10,21 @@ List<dynamic> skills = [
   // [2] - is important for development?
   ['Flutter', 10, true],
   ['Dart', 8, true],
-  ['BLoC (Cubit)', 9, true],
+  ['Cubit', 8, true],
   ['Firebase', 9, true],
   ['Freezed', 7, true],
   ['Node.js', 3, true],
-  ['Git', 8, true],
+  ['Git', 6, true],
   ['iOS development', 3, true],
   ['CI/CD', 1, true],
   ['Python', -5, true],
   ['SQLite', -4, true],
-  ['Visual Basic / VBA', -7, true],
+  ['Visual Basic', -5, true],
+  ['VBA', -7, false],
   ['AutoCAD', 10, false],
   ['Lisp', -2, true],
   ['Google Apps Script', -2, true],
-  ['Excel', 10, false],
+  ['Excel automation', 7, false],
   ['Google Sheets', 8, false],
   ['Sketchup 3D', -8, false]
 ];
@@ -33,6 +34,8 @@ class SkillsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const Text('skille!!!');
+
     final GlobalKey<TooltipState> tooltipkey = GlobalKey<TooltipState>();
     var t = AppLocalizations.of(context);
     return Column(

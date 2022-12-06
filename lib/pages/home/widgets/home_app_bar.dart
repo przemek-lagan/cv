@@ -21,25 +21,8 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
     return BlocBuilder<CoreCubit, CoreState>(
       builder: (context, coreState) {
         return AppBar(
+          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           actions: [
-            const Spacer(),
-            const Spacer(),
-            // RotatedBox(
-            //   quarterTurns: rotated ? 3 : 0,
-            //   child: Icon(
-            //     Global.isMobile ? Icons.phone_android : Icons.desktop_windows,
-            //     color: Theme.of(context).disabledColor,
-            //   ),
-            // ),
-            // Center(
-            //   child: RotatedBox(
-            //     quarterTurns: rotated ? 3 : 0,
-            //     child: Text(
-            //       Global.isWeb ? ' web' : ' app',
-            //       style: TextStyle(color: Theme.of(context).disabledColor),
-            //     ),
-            //   ),
-            // ),
             const Spacer(),
             const IconButton(onPressed: null, icon: Icon(Icons.light_mode)),
             Switch(

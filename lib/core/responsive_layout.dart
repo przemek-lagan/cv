@@ -1,5 +1,5 @@
 import 'package:cv/cubit/core_cubit.dart';
-import 'package:cv/home/pages/global.dart';
+import 'package:cv/globals/enums.dart';
 import 'package:cv/home/pages/no_space_warning.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,20 +25,28 @@ class ResponsiveLayout extends StatelessWidget {
         // if (width > 1200) {
         //   return wide;
         // }
-        ScaleFactor scaleFactor;
-        if (width < 800) {
-          scaleFactor = ScaleFactor.standard;
+        PageLayout pageLayout;
+        if (width < 400) {
+          pageLayout = PageLayout.narrow4;
+        } else if (width < 500) {
+          pageLayout = PageLayout.narrow3;
+        } else if (width < 600) {
+          pageLayout = PageLayout.narrow2;
+        } else if (width < 700) {
+          pageLayout = PageLayout.narrow1;
+        } else if (width < 800) {
+          pageLayout = PageLayout.standard;
         } else if (width < 1000) {
-          scaleFactor = ScaleFactor.zoom10;
+          pageLayout = PageLayout.wide1;
         } else if (width < 1200) {
-          scaleFactor = ScaleFactor.zoom20;
+          pageLayout = PageLayout.wide2;
         } else if (width < 1400) {
-          scaleFactor = ScaleFactor.zoom30;
+          pageLayout = PageLayout.wide3;
         } else {
-          scaleFactor = ScaleFactor.zoom40;
+          pageLayout = PageLayout.wide4;
         }
-        context.read<CoreCubit>().setScaleFactor(scaleFactor);
-        if (width < 300 || height < 350) {
+        context.read<CoreCubit>().setScaleFactor(pageLayout);
+        if (width < 250 || height < 350) {
           return const NoSpaceWarning();
           // return NoSpaceWarning('Width: $width, height: $height');
         }
