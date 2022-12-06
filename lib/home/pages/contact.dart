@@ -7,7 +7,10 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const Text('contactowator!!!!!');
+
     var t = AppLocalizations.of(context);
+
     return Column(
       children: [
         Table(

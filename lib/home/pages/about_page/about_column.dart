@@ -36,19 +36,18 @@ class AboutColumn extends StatelessWidget {
                   WidgetSpan(
                     child: Padding(
                       padding:
-                          EdgeInsets.only(top: 4 * coreState.scaleFactor.value),
+                          EdgeInsets.only(top: 4 * coreState.pageLayout.value),
                       child: Text.rich(
-                          textScaleFactor:
-                              coreState.scaleFactor.correctionValue,
+                          textScaleFactor: coreState.pageLayout.correctionValue,
                           TextSpan(text: t.about_my_title)),
                     ),
                   ),
                   // const TextSpan(text: 'Początkujący Flutter Developer'),
                   const TextSpan(text: '\n\n'),
-                  indentSpan(coreState.scaleFactor),
+                  indentSpan(coreState.pageLayout),
                   TextSpan(text: t.about_info1),
                   const TextSpan(text: '\n'),
-                  indentSpan(coreState.scaleFactor),
+                  indentSpan(coreState.pageLayout),
                   TextSpan(text: t.about_info2),
                 ],
               ),

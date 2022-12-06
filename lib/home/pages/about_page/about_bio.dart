@@ -1,11 +1,11 @@
-import 'package:cv/home/pages/global.dart';
+import 'package:cv/globals/enums.dart';
 import 'package:cv/home/pages/shared_widgets/indent_span.dart';
 import 'package:cv/home/pages/shared_widgets/tooltip_span.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class AboutBio extends StatefulWidget {
-  final ScaleFactor scaleFactor;
+  final PageLayout scaleFactor;
   const AboutBio({
     required this.scaleFactor,
     Key? key,

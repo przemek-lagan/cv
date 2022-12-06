@@ -1,3 +1,4 @@
+import 'package:cv/globals/enums.dart';
 import 'package:cv/home/pages/global.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +7,7 @@ WidgetSpan borderlessTooltipSpan({
   required BuildContext context,
   required String text,
   required Widget child,
-  required ScaleFactor scaleFactor,
+  required PageLayout scaleFactor,
 }) {
   return tooltipSpan(
     tooltipkey: tooltipkey,
@@ -23,7 +24,7 @@ WidgetSpan tooltipSpan({
   required BuildContext context,
   required String text,
   required Widget child,
-  required ScaleFactor scaleFactor,
+  required PageLayout scaleFactor,
   bool border = true,
 }) {
   return WidgetSpan(

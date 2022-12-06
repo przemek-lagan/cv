@@ -44,9 +44,14 @@ dependencies:
   intl: ^0.17.0
   simple_icons: ^7.10.0
   url_launcher: ^6.1.7
-  flutter_staggered_grid_view: ^0.6.2
-  google_fonts: ^3.0.1
+  # flutter_staggered_grid_view: ^0.6.2
   flutter_scatter: ^0.2.0
+  snappy_list_view: ^0.0.7
+  scrollable_positioned_list: ^0.3.5
+  # dyn_mouse_scroll: ^1.0.7
+  # scrollable_positioned_list: ^0.3.5
+  # flutter_improved_scrolling: ^0.0.3
+  # web_smooth_scroll: ^1.0.0
 
 dev_dependencies:
   flutter_test:

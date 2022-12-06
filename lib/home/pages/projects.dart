@@ -11,6 +11,8 @@ class ProjectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const Text('projekts!!!!');
+
     skills.shuffle();
     return BlocBuilder<CoreCubit, CoreState>(
       builder: (context, coreState) {
@@ -48,7 +50,9 @@ class ProjectsPage extends StatelessWidget {
           delegate: ArchimedeanSpiralScatterDelegate(
             // step: Random().nextInt(10) * 0.01,
             rotation: .5,
-            ratio: 1.5 * coreState.scaleFactor.value,
+            ratio: 1.5 *
+                coreState.pageLayout.value *
+                coreState.pageLayout.widthfactor,
           ),
           fillGaps: true,
           children: skillWidgetList,

@@ -11,6 +11,8 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CoreCubit, CoreState>(
       builder: (context, coreState) {
+        return const Text('about!!');
+
         return Column(
           // crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -45,7 +47,7 @@ class AboutPage extends StatelessWidget {
             ElevatedButton(
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(
-                    16 + coreState.scaleFactor.flex.toDouble() * 2)),
+                    16 + coreState.pageLayout.flex.toDouble() * 2)),
                 backgroundColor: MaterialStateProperty.all<Color>(
                     Theme.of(context).primaryColor),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -61,7 +63,7 @@ class AboutPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 64),
-            AboutBio(scaleFactor:  coreState.scaleFactor),
+            AboutBio(scaleFactor: coreState.pageLayout),
           ],
         );
       },
