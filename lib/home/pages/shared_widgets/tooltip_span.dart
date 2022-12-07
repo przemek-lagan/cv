@@ -2,6 +2,9 @@ import 'package:cv/globals/enums.dart';
 import 'package:cv/home/pages/global.dart';
 import 'package:flutter/material.dart';
 
+
+
+
 WidgetSpan borderlessTooltipSpan({
   required GlobalKey<TooltipState> tooltipkey,
   required BuildContext context,
@@ -9,7 +12,7 @@ WidgetSpan borderlessTooltipSpan({
   required Widget child,
   required PageLayout scaleFactor,
 }) {
-  return tooltipSpan(
+  return tooltipSpanOld(
     tooltipkey: tooltipkey,
     context: context,
     text: text,
@@ -19,7 +22,7 @@ WidgetSpan borderlessTooltipSpan({
   );
 }
 
-WidgetSpan tooltipSpan({
+WidgetSpan tooltipSpanOld({
   required GlobalKey<TooltipState> tooltipkey,
   required BuildContext context,
   required String text,
@@ -48,7 +51,7 @@ WidgetSpan tooltipSpan({
         child: Text.rich(
           TextSpan(text: text),
           textAlign: TextAlign.start,
-          textScaleFactor: scaleFactor.correctionValue,
+          textScaleFactor: scaleFactor.textCorrection,
           style: TextStyle(
             color: Theme.of(context).hintColor,
           ),

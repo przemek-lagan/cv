@@ -51,7 +51,7 @@ class ProjectsPage extends StatelessWidget {
             // step: Random().nextInt(10) * 0.01,
             rotation: .5,
             ratio: 1.5 *
-                coreState.pageLayout.value *
+                coreState.pageLayout.textScale *
                 coreState.pageLayout.widthfactor,
           ),
           fillGaps: true,
