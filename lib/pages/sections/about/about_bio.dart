@@ -1,6 +1,6 @@
 import 'package:cv/globals/enums.dart';
-import 'package:cv/home/pages/shared_widgets/indent_span.dart';
 import 'package:cv/home/pages/shared_widgets/tooltip_span.dart';
+import 'package:cv/pages/sections/shared/indent_span.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -34,15 +34,16 @@ class _AboutBioState extends State<AboutBio> {
                   text: 'Rozpocząłem karierę jako inżynier chemik, '
                       'jednak szybko odkryłem że pociąga mnie kodowanie, '
                       'które wkrótce stało się moim '),
-              tooltipSpan(
-                  tooltipkey: tooltipkey1,
-                  context: context,
-                  text: 'hobby.',
-                  scaleFactor: widget.scaleFactor,
-                  child: Text.rich(
-                    textScaleFactor: widget.scaleFactor.value,
-                    const TextSpan(text: 'czy też raczej obsesją...'),
-                  )),
+              tooltipSpanOld(
+                tooltipkey: tooltipkey1,
+                context: context,
+                text: 'hobby.',
+                scaleFactor: widget.scaleFactor,
+                child: Text.rich(
+                  textScaleFactor: widget.scaleFactor.textScale,
+                  const TextSpan(text: 'czy też raczej obsesją...'),
+                ),
+              ),
               if (!_expanded)
                 TextSpan(
                   text: ' (...)',
@@ -72,7 +73,7 @@ class _AboutBioState extends State<AboutBio> {
                           },
                           child: Text.rich(
                             textAlign: TextAlign.justify,
-                            textScaleFactor: widget.scaleFactor.correctionValue,
+                            textScaleFactor: widget.scaleFactor.textCorrection,
                             TextSpan(
                               children: [
                                 indentSpan(widget.scaleFactor),
@@ -134,11 +135,7 @@ class _AboutBioState extends State<AboutBio> {
                         ),
                 ),
               ),
-              indentSpan(widget.scaleFactor),
-              const TextSpan(
-                text: 'Szukając sposobu na opracowanie aplikacji '
-                    'mobilnej, trafiłem na Fluttera i postanowiłem zostać z nim na dłużej.',
-              ),
+              
             ],
           ),
         ),

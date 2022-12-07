@@ -2,6 +2,7 @@ import 'package:cv/cubit/core_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+
 class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool rotated;
 
@@ -15,24 +16,22 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool platformDarkMode =
-        MediaQuery.of(context).platformBrightness == Brightness.dark;
-
     return BlocBuilder<CoreCubit, CoreState>(
       builder: (context, coreState) {
         return AppBar(
           backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           actions: [
             const Spacer(),
+            const Spacer(),
+            Center(
+                child: Text(coreState.windowHeight.toString())), // TODO remove
+            const Spacer(),
             const IconButton(onPressed: null, icon: Icon(Icons.light_mode)),
             Switch(
-                value: coreState.themeMode == null
-                    ? platformDarkMode
-                    : coreState.themeMode == ThemeMode.dark,
-                onChanged: (_) =>
-                    context.read<CoreCubit>().changeTheme(platformDarkMode)),
+                value: coreState.themeMode == ThemeMode.dark,
+                onChanged: (_) => context.read<CoreCubit>().switchTheme()),
             RotatedBox(
-                quarterTurns: rotated ? 3 : 0,
+                quarterTurns: rotated ? 1 : 0,
                 child: const IconButton(
                     onPressed: null, icon: Icon(Icons.dark_mode))),
             const SizedBox(width: 32),
@@ -44,7 +43,7 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
               child: SizedBox(
                 width: 32,
                 child: RotatedBox(
-                  quarterTurns: rotated ? 3 : 0,
+                  quarterTurns: rotated ? 1 : 0,
                   child: Stack(
                     alignment: AlignmentDirectional.center,
                     children: [

@@ -32,6 +32,20 @@ class CoreCubit extends Cubit<CoreState> {
     });
   }
 
+  Future<void> initializeTheme(BuildContext context) async {
+    bool platformDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
+    emit(state.copyWith(
+        themeMode: platformDarkMode ? ThemeMode.dark : ThemeMode.light));
+  }
+
+  Future<void> switchTheme() async {
+    ThemeMode themeMode =
+        state.themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+
+    emit(state.copyWith(themeMode: themeMode));
+  }
+
   Future<void> changeTheme(bool platformDarkMode,
       {ThemeMode? themeMode}) async {
     if (themeMode == null) {
@@ -65,20 +79,20 @@ class CoreCubit extends Cubit<CoreState> {
       pageLayout = PageLayout.narrow3;
     } else if (width < 600) {
       pageLayout = PageLayout.narrow2;
-    } else if (width < 700) {
-      pageLayout = PageLayout.narrow1;
     } else if (width < 800) {
-      pageLayout = PageLayout.standard;
+      pageLayout = PageLayout.narrow1;
     } else if (width < 1000) {
-      pageLayout = PageLayout.wide1;
+      pageLayout = PageLayout.standard;
     } else if (width < 1200) {
-      pageLayout = PageLayout.wide2;
+      pageLayout = PageLayout.wide1;
     } else if (width < 1400) {
+      pageLayout = PageLayout.wide2;
+    } else if (width < 1600) {
       pageLayout = PageLayout.wide3;
     } else {
       pageLayout = PageLayout.wide4;
     }
-    emit(state.copyWith(pageLayout: pageLayout));
+    emit(state.copyWith(pageLayout: pageLayout,windowHeight: height));
   }
 
   Future<void> changeActivePageIndex(int index) async {

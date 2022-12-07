@@ -1,5 +1,6 @@
 import 'package:cv/cubit/core_cubit.dart';
 import 'package:cv/pages/home/home_page.dart';
+import 'package:cv/themes/theme_dark.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -22,17 +23,18 @@ class MyApp extends StatelessWidget {
       create: (context) => CoreCubit()..init(),
       child: BlocBuilder<CoreCubit, CoreState>(
         builder: (context, coreState) {
+          ThemeData lightThemeData = lightTheme(coreState.pageLayout.textScale);
+          ThemeData darkThemeData = darkTheme(coreState.pageLayout.textScale);
+          print(darkThemeData.brightness);
           return MaterialApp(
-            useInheritedMediaQuery: true,
+            // useInheritedMediaQuery: true,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             locale: coreState.en ? const Locale('en') : const Locale('pl'),
             debugShowCheckedModeBanner: false,
             title: 'Przemysław Łagan',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
-            darkTheme: ThemeData(brightness: Brightness.dark),
+            theme: lightThemeData,
+            darkTheme: darkThemeData,
             themeMode: coreState.themeMode,
             home: const HomePage(),
           );

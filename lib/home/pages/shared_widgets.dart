@@ -1,27 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PageTitle extends StatelessWidget {
-  const PageTitle({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
 
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-        ),
-        const Divider(),
-        const SizedBox(height: 16),
-      ],
-    );
-  }
-}
 
 class TableCell1 extends StatelessWidget {
   final String text;

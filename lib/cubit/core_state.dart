@@ -9,6 +9,7 @@ class CoreState {
   final ItemPositionsListener? itemPositionsListener;
   final List<int> visiblePages;
   final int activePageIndex;
+  final double windowHeight;
   // final List places;
   // final PageController? pageController;
 
@@ -18,8 +19,9 @@ class CoreState {
     this.pageLayout = PageLayout.standard,
     this.itemScrollController,
     this.itemPositionsListener,
-    this.visiblePages=const[],
+    this.visiblePages = const [],
     this.activePageIndex = 0,
+    this.windowHeight=0,
     // this.places = const [],
     // this.pageController,
   });
@@ -32,6 +34,7 @@ class CoreState {
     ItemPositionsListener? itemPositionsListener,
     List<int>? visiblePages,
     int? activePageIndex,
+    double? windowHeight,
   }) {
     return CoreState(
       themeMode: themeMode ?? this.themeMode,
@@ -41,6 +44,7 @@ class CoreState {
       itemPositionsListener: itemPositionsListener ?? this.itemPositionsListener,
       visiblePages: visiblePages ?? this.visiblePages,
       activePageIndex: activePageIndex ?? this.activePageIndex,
+      windowHeight: windowHeight ?? this.windowHeight,
     );
   }
 }

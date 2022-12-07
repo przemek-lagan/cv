@@ -1,11 +1,19 @@
 {
+    "fab_tooltip": "Kontakt",
+
     "start_title": "Start",
+    "start_hi": "Cześć, jestem Przemek",
+    "start_my_title": "Junior Flutter Developer",
+    "start_info": "Od wielu lat moim głównym hobby jest nauka nowych języków programowania i tworzenie progamów na własne potrzeby, a od marca 2022 zajmuję się przede wszystkim Flutterem.",
+    "start_button": "Curriculum Vitae",
     
     "about_title": "O mnie",
-    "about_hi": "Cześć, jestem Przemek",
-    "about_my_title": "Początkujący Flutter Developer",
-    "about_info1": "Od wielu lat moim głównym hobby jest nauka nowych języków programowania i tworzenie progamów na własne potrzeby, a od marca 2022 zajmuję się przede wszystkim Flutterem.",
-    "about_info2": "W wolnych chwilach jeżdżę na rolkach, próbuję grać na pianinie, słucham krasnoludzkiego power metalu i tworzę rymy niskich lotów.",
+    "about_info1": "Rozpocząłem karierę jako inżynier chemik, jednak szybko odkryłem że pociąga mnie kodowanie, które wkrótce stało się moim ",
+    "about_info1_tooltip_body": "hobby",
+    "about_info1_tooltip_message": "czy też raczej obsesją...",
+    "about_info2": "Szukając sposobu na opracowanie aplikacji mobilnej, trafiłem na Fluttera i postanowiłem zostać z nim na dłużej.",
+    
+    "about_info3": "W wolnych chwilach jeżdżę na rolkach, próbuję grać na pianinie, słucham krasnoludzkiego power metalu i tworzę rymy niskich lotów.",
     
     "skills_title": "Umiejętności",
     "skills_lang_title": "Języki obce",
