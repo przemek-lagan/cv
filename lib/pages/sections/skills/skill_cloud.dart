@@ -4,11 +4,11 @@ class _SkillCloud extends StatelessWidget {
   const _SkillCloud({
     Key? key,
     required this.t,
-    required this.textScale,
+    required this.pageLayout,
   }) : super(key: key);
 
   final AppLocalizations? t;
-  final double textScale;
+  final PageLayout pageLayout;
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,13 @@ class _SkillCloud extends StatelessWidget {
               child: Icon(Icons.question_mark,
                   color: Theme.of(context).disabledColor),
               tooltip: SizedBox(
-                width: 400 * textScale,
+                width: 400 * pageLayout.textScale,
                 child: Text.rich(
                     textAlign: TextAlign.justify,
                     style: Theme.of(context).textTheme.bodyText1,
                     TextSpan(children: [
                       TextSpan(text: t!.skills_cloud_tooltip1),
+                      const WidgetSpan(child: SizedBox()),
                       const TextSpan(text: '\n'),
                       TextSpan(text: t!.skills_cloud_tooltip2),
                       const TextSpan(text: '\n\n'),
@@ -42,7 +43,9 @@ class _SkillCloud extends StatelessWidget {
           child: Scatter(
             alignment: Alignment.center,
             delegate: ArchimedeanSpiralScatterDelegate(
-              ratio: textScale * textScale,
+              ratio: pageLayout.textScale *
+                  pageLayout.textScale *
+                  pow(pageLayout.widthfactor, 2),
             ),
             fillGaps: true,
             children: _skillWidgetList(context),
@@ -52,4 +55,3 @@ class _SkillCloud extends StatelessWidget {
     );
   }
 }
-

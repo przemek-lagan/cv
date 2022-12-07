@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_scatter/flutter_scatter.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 part 'skill_cloud.dart';
 part 'skill_list.dart';
@@ -32,7 +33,7 @@ class Skills extends StatelessWidget {
           children: [
             _SkillCloud(
               t: t,
-              textScale: coreState.pageLayout.textScale,
+              pageLayout: coreState.pageLayout,
             ),
             const SizedBox(height: 64),
             Align(
@@ -48,19 +49,21 @@ class Skills extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                indentWidget(coreState.pageLayout),
+                indentWidget(coreState.pageLayout, count: 0.6),
                 Text(
-                  '${t.skills_lang1_title}   -   ',
+                  '${t.skills_lang1_title}: ${t.skills_lang1_level}',
                   style: bodyText,
                 ),
+              ],
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                indentWidget(coreState.pageLayout, count: 1.2),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        t.skills_lang1_level,
-                        style: bodyText,
-                      ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -82,7 +85,8 @@ class Skills extends StatelessWidget {
                             backgroundColor: MaterialStateProperty.all<Color>(
                                 Theme.of(context).primaryColor),
                           ),
-                          onPressed: () {},
+                          onPressed: () async =>
+                              await launchUrlString(t.skills_lang1_cert1_link),
                           label: Text(t.skills_lang1_cert1_link_descritpion),
                           icon: const Icon(CarbonIcons.certificate),
                         ),

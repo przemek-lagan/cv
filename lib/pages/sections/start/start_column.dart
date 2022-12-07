@@ -1,6 +1,5 @@
 part of 'start.dart';
 
-
 class _StartColumn extends StatelessWidget {
   final CrossAxisAlignment alignment;
   const _StartColumn({
@@ -55,12 +54,21 @@ class _StartColumn extends StatelessWidget {
                   ),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                // final pdfController = PdfController(
+                //   document: PdfDocument.openAsset('assets/Resume.pdf'),
+                // );
+
+                // Widget pdfView() => PdfView(
+                //       controller: pdfController,
+                //     );
+              },
               child: Text(
                 t.start_button,
                 style: const TextStyle(fontSize: 16),
               ),
             ),
+            PDFView(),
           ],
         );
       },

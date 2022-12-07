@@ -20,6 +20,7 @@ class _NavigationDrawer extends StatelessWidget {
               ListView(
                 shrinkWrap: true,
                 children: [
+                  SizedBox(height: 32),
                   ...ContentList.pages
                       .map((page) => ListTile(
                             leading: page.icon,

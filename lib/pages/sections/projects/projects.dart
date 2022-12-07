@@ -39,7 +39,7 @@ class Projects extends StatelessWidget {
                       ),
                       const SizedBox(height: 32),
                       Align(
-                        alignment: Alignment.centerRight,
+                        // alignment: Alignment.centerRight,
                         child: ElevatedButton.icon(
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
