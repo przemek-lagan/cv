@@ -50,6 +50,8 @@ dependencies:
   scrollable_positioned_list: ^0.3.5
   flutter_speed_dial: ^6.2.0
   carbon_icons: ^0.0.1+2
+  native_pdf_view: ^4.2.0
+  flutter_pdfview: ^1.2.5
   # dyn_mouse_scroll: ^1.0.7
   # scrollable_positioned_list: ^0.3.5
   # flutter_improved_scrolling: ^0.0.3
@@ -83,6 +85,7 @@ flutter:
     - assets/photos/profile_light.jpg
     - assets/photos/profile_dark.jpg
     - assets/images/facepalm.jpg
+    - assets/Resume.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

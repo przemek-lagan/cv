@@ -12,7 +12,7 @@
     "about_info1_tooltip_body": "hobby",
     "about_info1_tooltip_message": "czy też raczej obsesją...",
     "about_info2": "Szukając sposobu na opracowanie aplikacji mobilnej, trafiłem na Fluttera i postanowiłem zostać z nim na dłużej.",
-    "about_expanded_tooltip": "Pokaż ścianę tekstu",
+    "about_expanded_tooltip": "pokaż ścianę tekstu",
     "about_expanded_info1": "Tak rozpocząłem przygodę z ",
     "about_expanded_info2a": "debugowaniem",
     "about_expanded_info2b": " programowaniem, zaczynając od automatyzacji wszelakich arkuszy obliczeniowych przy użyciu VBA, poprzez integrację Excela z AutoCAD-em a kończąc na programie do web scrapingu, zapisującym dane w ważącej kilkaset MB wieloplikowej bazie danych w... ",
@@ -40,7 +40,7 @@
     "skills_goals_title2": "(plany edukacyjne na najbliższe wolne chwile)",
     "skills_goals_goal1": "REST API",
     "skills_goals_goal2": "MariaDB / MySQL",
-    "skills_goals_goal3": "testy ب_ب",
+    "skills_goals_goal3": "",
     "skills_goals_goal4": "",
     "skills_goals_goal5": "",
 

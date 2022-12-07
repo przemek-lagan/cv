@@ -25,13 +25,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     context.read<CoreCubit>().initializeTheme(context);
     var t = AppLocalizations.of(context);
-    ContentList.init(context);
-    ContactList.init(context);
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       context.read<CoreCubit>().setPageLayout(constraints);
       return BlocBuilder<CoreCubit, CoreState>(
         builder: (context, coreState) {
+          ContentList.init(context);
+          ContactList.init(context);
           return coreState.pageLayout.pageType == PageWidthType.tooSmall
               ? const NoSpaceWarning()
               : Scaffold(
