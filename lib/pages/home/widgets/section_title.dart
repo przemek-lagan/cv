@@ -1,11 +1,10 @@
-import 'package:cv/themes/text_styles.dart';
-import 'package:flutter/material.dart';
+part of '../home_page.dart';
 
-class SectionTitle extends StatelessWidget {
-  const SectionTitle({
-    Key? key,
+class _SectionTitle extends StatelessWidget {
+  const _SectionTitle({
     required this.title,
     this.crossAxisAlignment = CrossAxisAlignment.center,
+    Key? key,
   }) : super(key: key);
 
   final CrossAxisAlignment crossAxisAlignment;

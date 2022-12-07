@@ -17,6 +17,8 @@ ThemeData darkTheme(double textScale) {
     textTheme: theme.textTheme.copyWith(
       headline2:
           theme.textTheme.headline2!.copyWith(color: Colors.blue.shade200),
+      headline6:
+          theme.textTheme.headline6!.copyWith(color: Colors.yellow.shade300),
     ),
   );
 }
@@ -32,6 +34,13 @@ ThemeData assignSharedValues(ThemeData theme, double textScale) {
     headline3: theme.textTheme.bodyText1!.copyWith(fontSize: 18 * textScale),
     // (startText)
     bodyText1: theme.textTheme.bodyText1!.copyWith(fontSize: 16 * textScale),
+    // skillScatterText
+    headline6: theme.textTheme.bodyText1!
+        .copyWith(fontSize: 16 * textScale * textScale),
+    // general headline
+    headline4: theme.textTheme.bodyText1!.copyWith(fontSize: 22 * textScale),
+    // (ListTile Title)
+    subtitle1: theme.textTheme.bodyText1!.copyWith(fontSize: 16 * textScale),
   ));
 }
 
