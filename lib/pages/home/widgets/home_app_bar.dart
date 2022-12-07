@@ -1,14 +1,11 @@
-import 'package:cv/cubit/core_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+part of '../home_page.dart';
 
-
-class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
+class _HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool rotated;
 
-  const HomeAppBar({
-    Key? key,
+  const _HomeAppBar({
     this.rotated = false,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -21,11 +18,6 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
         return AppBar(
           backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           actions: [
-            const Spacer(),
-            const Spacer(),
-            Center(
-                child: Text(coreState.windowHeight.toString())), // TODO remove
-            const Spacer(),
             const IconButton(onPressed: null, icon: Icon(Icons.light_mode)),
             Switch(
                 value: coreState.themeMode == ThemeMode.dark,

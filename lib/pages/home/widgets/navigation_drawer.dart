@@ -1,14 +1,10 @@
-import 'package:cv/cubit/core_cubit.dart';
-import 'package:cv/globals/contact_list.dart';
-import 'package:cv/globals/content_list.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+part of '../home_page.dart';
 
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({
+class _NavigationDrawer extends StatelessWidget {
+  const _NavigationDrawer({
     this.isDrawer = true,
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
   final bool isDrawer;
 
   @override
@@ -32,9 +28,13 @@ class NavigationDrawer extends StatelessWidget {
                                 .state
                                 .visiblePages
                                 .contains(ContentList.pages.indexOf(page)),
+                            // se
+                            // selectedTileColor:
+                            //     Theme.of(context).backgroundColor,
+
                             title: Text(
                               page.title,
-                              style: Theme.of(context).textTheme.headline4,
+                              // style: Theme.of(context).textTheme.bodyText1,
                             ),
                             onTap: () {
                               int targetIndex = ContentList.pages.indexOf(page);
@@ -47,8 +47,8 @@ class NavigationDrawer extends StatelessWidget {
                                   .scrollTo(
                                       index: targetIndex,
                                       duration: Duration(
-                                          milliseconds: 300 * distance),
-                                      curve: Curves.easeInCubic);
+                                          milliseconds: 200 * distance + 1),
+                                      curve: Curves.linear);
                               if (isDrawer) Navigator.of(context).pop();
                             },
                           ))

@@ -10,8 +10,6 @@ class CoreState {
   final List<int> visiblePages;
   final int activePageIndex;
   final double windowHeight;
-  // final List places;
-  // final PageController? pageController;
 
   CoreState({
     this.themeMode,

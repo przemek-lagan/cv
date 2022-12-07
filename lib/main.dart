@@ -14,7 +14,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({
+    Key? key,
+  }) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -25,7 +27,6 @@ class MyApp extends StatelessWidget {
         builder: (context, coreState) {
           ThemeData lightThemeData = lightTheme(coreState.pageLayout.textScale);
           ThemeData darkThemeData = darkTheme(coreState.pageLayout.textScale);
-          print(darkThemeData.brightness);
           return MaterialApp(
             // useInheritedMediaQuery: true,
             localizationsDelegates: AppLocalizations.localizationsDelegates,

@@ -1,13 +1,9 @@
-import 'package:cv/cubit/core_cubit.dart';
-import 'package:cv/globals/content_list.dart';
-import 'package:cv/globals/enums.dart';
-import 'package:cv/pages/home/widgets/section_title.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+part of '../home_page.dart';
 
-class HomePageContent extends StatelessWidget {
-  const HomePageContent({super.key});
+class _HomePageContent extends StatelessWidget {
+  const _HomePageContent({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +11,7 @@ class HomePageContent extends StatelessWidget {
     List<int> visiblePages = context.read<CoreCubit>().state.visiblePages;
     if (visiblePages.isNotEmpty) initialScrollIndex = visiblePages[0];
     return ScrollablePositionedList.builder(
-      initialScrollIndex: 1, // TODO initialScrollIndex,
+      initialScrollIndex: initialScrollIndex,
       shrinkWrap: true,
       itemCount: ContentList.pages.length,
       itemScrollController:
@@ -23,13 +19,15 @@ class HomePageContent extends StatelessWidget {
       itemPositionsListener:
           context.read<CoreCubit>().state.itemPositionsListener,
       itemBuilder: (BuildContext context, int index) {
+        PageLayout pageLayout = context.read<CoreCubit>().state.pageLayout;
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+          padding: EdgeInsets.symmetric(
+              horizontal: 16 + 8 * pageLayout.flex.toDouble(), vertical: 32),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               if (ContentList.pages[index].showTitle)
-                SectionTitle(
+                _SectionTitle(
                   title: ContentList.pages[index].title,
                   crossAxisAlignment:
                       context.read<CoreCubit>().state.pageLayout.pageType ==

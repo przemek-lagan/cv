@@ -1,4 +1,4 @@
-import 'package:cv/home/pages/global.dart';
+import 'package:cv/globals/platform_globals.dart';
 import 'package:flutter/material.dart';
 
 // WidgetSpan borderlessTooltipSpan({
@@ -19,20 +19,24 @@ import 'package:flutter/material.dart';
 // }
 
 WidgetSpan tooltipSpan({
-  // required GlobalKey<TooltipState> tooltipkey,
   required BuildContext context,
-  required String text,
-  required Widget child,
-  required TextStyle textStyle,
-  // required PageLayout scaleFactor,
+  required var child,
+  required Widget tooltip,
+  TextStyle? textStyle,
   bool border = true,
 }) {
+  if (child.runtimeType == String) {
+    child = Text.rich(TextSpan(
+      text: child,
+      style: textStyle?.copyWith(color: Theme.of(context).hintColor),
+    ));
+  }
   final GlobalKey<TooltipState> tooltipkey = GlobalKey<TooltipState>();
   return WidgetSpan(
     child: Tooltip(
       key: tooltipkey,
       richMessage: WidgetSpan(
-        child: child,
+        child: tooltip,
       ),
       decoration: border
           ? BoxDecoration(
@@ -46,17 +50,7 @@ WidgetSpan tooltipSpan({
         onTap: Global.isMobile == false
             ? null
             : () => tooltipkey.currentState?.ensureTooltipVisible(),
-        child: Text.rich(
-          TextSpan(
-            text: text,
-            style: textStyle.copyWith(color: Theme.of(context).hintColor),
-          ),
-          // textAlign: TextAlign.start,
-          // textScaleFactor: scaleFactor.textCorrection,
-          // style: TextStyle(
-          //   color: Theme.of(context).hintColor,
-          // ),
-        ),
+        child: child,
       ),
     ),
   );

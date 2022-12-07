@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:cv/cubit/core_cubit.dart';
 import 'package:cv/globals/enums.dart';
-import 'package:cv/pages/sections/shared/indent_span.dart';
+import 'package:cv/pages/sections/shared/indent.dart';
 import 'package:cv/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +12,9 @@ part 'start_column.dart';
 part 'start_photo.dart';
 
 class Start extends StatelessWidget {
-  const Start({super.key});
+  const Start({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +45,9 @@ class Start extends StatelessWidget {
             ],
             SizedBox(
                 height: max(
-                    (coreState.windowHeight - 712) *
-                        coreState.pageLayout.textScale,
+                    (coreState.windowHeight - 600) *
+                            coreState.pageLayout.textScale +
+                        coreState.pageLayout.flex * 10,
                     0)),
           ],
         );

@@ -1,5 +1,9 @@
+import 'package:cv/cubit/core_cubit.dart';
+import 'package:cv/globals/enums.dart';
+import 'package:cv/pages/sections/shared/indent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:simple_icons/simple_icons.dart';
@@ -9,22 +13,31 @@ class ContactAction {
   final String tooltip;
   final Icon icon;
   final VoidCallback onTap;
+  final String link;
 
   const ContactAction(
-      {required this.tooltip, required this.icon, required this.onTap});
+      {required this.tooltip,
+      required this.icon,
+      required this.onTap,
+      required this.link});
 }
 
 class ContactList {
   static late List<ContactAction> actions;
+  static late TextStyle contactTextStyle;
+  static late PageLayout pageLayout;
 
   static void init(BuildContext context) {
+    contactTextStyle = Theme.of(context).textTheme.bodyText1!;
+    pageLayout = context.read<CoreCubit>().state.pageLayout;
     var t = AppLocalizations.of(context);
     actions = [
       ContactAction(
         tooltip: 'e-mail',
         icon: const Icon(SimpleIcons.gmail),
+        link: t!.e_mail,
         onTap: () async {
-          final String mailUrl = 'mailto:${t!.e_mail}';
+          final String mailUrl = 'mailto:${t.e_mail}';
           try {
             await Clipboard.setData(ClipboardData(text: t.e_mail));
             await launchUrlString(mailUrl).then(
@@ -42,23 +55,26 @@ class ContactList {
       ContactAction(
         tooltip: 'WhatsApp',
         icon: const Icon(SimpleIcons.whatsapp),
-        onTap: () async => await launchUrlString(t!.whatsapp_link),
+        link: t.whatsapp_link_short,
+        onTap: () async => await launchUrlString(t.whatsapp_link),
       ),
       ContactAction(
         tooltip: 'GitHub',
         icon: const Icon(SimpleIcons.github),
-        onTap: () async =>
-            await launchUrlString('https://github.com/${t!.github_name}'),
+        link: t.github_link_short,
+        onTap: () async => await launchUrlString(t.github_link),
       ),
       ContactAction(
         tooltip: 'LinkedIn',
         icon: const Icon(SimpleIcons.linkedin),
-        onTap: () async => await launchUrlString(t!.linkedIn_link),
+        link: t.linkedIn_link_short,
+        onTap: () async => await launchUrlString(t.linkedIn_link),
       ),
       ContactAction(
         tooltip: 'Facebook Messenger',
         icon: const Icon(SimpleIcons.messenger),
-        onTap: () async => await launchUrlString(t!.messenger_link),
+        link: t.messenger_link_short,
+        onTap: () async => await launchUrlString(t.messenger_link),
       ),
     ];
   }
@@ -79,13 +95,30 @@ class ContactList {
             icon: action.icon,
           ))
       .toList();
+
+  static List<Widget> get contactSectionFields => actions
+      .map((action) => Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '${action.tooltip}:',
+                style: contactTextStyle,
+              ),
+              Row(
+                children: [
+                  indentWidget(pageLayout),
+                  SelectableText(
+                    action.link,
+                    style: contactTextStyle,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+            ],
+          ))
+      .toList();
 }
 
 
-// IconButton(
-//           tooltip: 'WhatsApp: ${t.phone_number}',
-//           onPressed: () async {
-//             await launchUrlString(t.whatsapp_link);
-//           },
-//           icon: const Icon(SimpleIcons.whatsapp),
-//         ),
+
+
