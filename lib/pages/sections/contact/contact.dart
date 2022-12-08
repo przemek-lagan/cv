@@ -18,7 +18,7 @@ class Contact extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ...ContactList.contactSectionFields,
-            SizedBox(height: max((coreState.windowHeight - 450), 0)),
+            SizedBox(height: max((coreState.windowHeight - 540), 0)),
           ],
         );
       },

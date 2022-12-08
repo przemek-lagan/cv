@@ -36,7 +36,11 @@ List<Widget> _skillWidgetList(BuildContext context) => _skills.map((e) {
           .color!
           .withOpacity(1 / 10 * level);
       if (importance < 10) {
-        color = color.withRed(200).withBlue(200).withGreen(200);
+        color = Theme.of(context)
+            .textTheme
+            .bodyText1!
+            .color!
+            .withOpacity(1 / 13 * level);
       }
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),

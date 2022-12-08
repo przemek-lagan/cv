@@ -38,19 +38,29 @@ class _SkillCloud extends StatelessWidget {
             ),
           ])),
         ),
-        Align(
-          alignment: Alignment.center,
-          child: Scatter(
-            alignment: Alignment.center,
-            delegate: ArchimedeanSpiralScatterDelegate(
-              ratio: pageLayout.textScale *
-                  pageLayout.textScale *
-                  pow(pageLayout.widthfactor, 2),
+        if (pageLayout.index <= PageLayout.narrow2.index)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.end,
+              children: _skillWidgetList(context),
             ),
-            fillGaps: true,
-            children: _skillWidgetList(context),
+          )
+        else
+          Align(
+            alignment: Alignment.center,
+            child: Scatter(
+              alignment: Alignment.center,
+              delegate: ArchimedeanSpiralScatterDelegate(
+                ratio: pageLayout.textScale *
+                    pageLayout.textScale *
+                    pow(pageLayout.widthfactor, 2),
+              ),
+              fillGaps: true,
+              children: _skillWidgetList(context),
+            ),
           ),
-        ),
       ],
     );
   }

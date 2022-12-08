@@ -55,20 +55,16 @@ class _StartColumn extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                // final pdfController = PdfController(
-                //   document: PdfDocument.openAsset('assets/Resume.pdf'),
-                // );
+                html.window.open(t.start_cv_link, "CV");
 
-                // Widget pdfView() => PdfView(
-                //       controller: pdfController,
-                //     );
+                // Navigator.of(context, rootNavigator: true).push(
+                //     MaterialPageRoute(builder: (context) => const PDFPage()));
               },
               child: Text(
                 t.start_button,
                 style: const TextStyle(fontSize: 16),
               ),
             ),
-            PDFView(),
           ],
         );
       },

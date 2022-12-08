@@ -45,6 +45,19 @@ class Skills extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),
+            if (t.skills_lang0_title != '') ...[
+              const SizedBox(height: 16),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  indentWidget(coreState.pageLayout, count: 0.6),
+                  Text(
+                    '${t.skills_lang0_title}: ${t.skills_lang0_level}',
+                    style: bodyText,
+                  ),
+                ],
+              ),
+            ],
             const SizedBox(height: 16),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
