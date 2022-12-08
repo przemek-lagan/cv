@@ -28,7 +28,6 @@ class About extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text.rich(
-                // textAlign: TextAlign.justify,
                 TextSpan(
                   style: Theme.of(context).textTheme.bodyText1,
                   children: [

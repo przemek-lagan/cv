@@ -50,7 +50,8 @@
 
     "projects_title": "Projects",
     "projects_1_title": "This website :)",
-    "projects_1_button": "Repository under development",
+    "projects_1_button": "repository",
+    "project_1_button_link": "https://github.com/przemek-lagan/cv",
     "projects_2_descritpion1": "The application is being developed as a future communication channel for customers of the local restaurant chain.",
     "projects_2_descritpion2": "Currently on the Google Play store, in early closed tests.",
     "projects_2_demo_info": "Demo in preparation",

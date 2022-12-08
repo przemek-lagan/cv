@@ -16,14 +16,10 @@ class _HomePageBody extends StatelessWidget {
             if (coreState.pageLayout.pageType == PageWidthType.wide) ...[
               const _NavigationDrawer(isDrawer: false),
             ],
-            // if (coreState.pageLayout.flex > 0)
-            //   Spacer(flex: coreState.pageLayout.flex),
             const Expanded(
               flex: 100,
               child: _HomePageContent(),
             ),
-            // if (coreState.pageLayout.flex > 0)
-            //   Spacer(flex: coreState.pageLayout.flex),
             if (coreState.pageLayout.pageType == PageWidthType.wide) ...[
               const RotatedBox(
                 quarterTurns: -1,

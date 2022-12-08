@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -26,7 +25,6 @@ class MyApp extends StatelessWidget {
           ThemeData lightThemeData = lightTheme(coreState.pageLayout.textScale);
           ThemeData darkThemeData = darkTheme(coreState.pageLayout.textScale);
           return MaterialApp(
-            // useInheritedMediaQuery: true,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             locale: coreState.gb ? const Locale('en') : const Locale('pl'),

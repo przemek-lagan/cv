@@ -56,9 +56,6 @@ class _StartColumn extends StatelessWidget {
               ),
               onPressed: () {
                 html.window.open(t.start_cv_link, "CV");
-
-                // Navigator.of(context, rootNavigator: true).push(
-                //     MaterialPageRoute(builder: (context) => const PDFPage()));
               },
               child: Text(
                 t.start_button,
