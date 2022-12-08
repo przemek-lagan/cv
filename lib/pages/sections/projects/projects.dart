@@ -7,6 +7,7 @@ import 'package:cv/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class Projects extends StatelessWidget {
   const Projects({
@@ -42,14 +43,14 @@ class Projects extends StatelessWidget {
                           ),
                           const SizedBox(height: 32),
                           Align(
-                            // alignment: Alignment.centerRight,
                             child: ElevatedButton.icon(
                               style: ButtonStyle(
                                 backgroundColor:
                                     MaterialStateProperty.all<Color>(
                                         Theme.of(context).primaryColor),
                               ),
-                              onPressed: null,
+                              onPressed: () async => await launchUrlString(
+                                  t.project_1_button_link),
                               label: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(t.projects_1_button),

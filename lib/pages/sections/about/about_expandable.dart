@@ -34,7 +34,6 @@ class _AboutExpandableState extends State<_AboutExpandable> {
                 TextSpan(
                   children: [
                     indentSpan(widget.pageLayout),
-                    // indentSpan(widget.pageLayout),
                     TextSpan(text: t!.about_expanded_info1),
                     TextSpan(
                         text: t.about_expanded_info2a,

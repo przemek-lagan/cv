@@ -29,13 +29,8 @@ class _NavigationDrawer extends StatelessWidget {
                                 .state
                                 .visiblePages
                                 .contains(ContentList.pages.indexOf(page)),
-                            // se
-                            // selectedTileColor:
-                            //     Theme.of(context).backgroundColor,
-
                             title: Text(
                               page.title,
-                              // style: Theme.of(context).textTheme.bodyText1,
                             ),
                             onTap: () {
                               ContentPage tmpPage = ContentList.pages

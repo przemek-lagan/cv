@@ -1,22 +1,6 @@
 import 'package:cv/globals/platform_globals.dart';
 import 'package:flutter/material.dart';
 
-// WidgetSpan borderlessTooltipSpan({
-//   required GlobalKey<TooltipState> tooltipkey,
-//   required BuildContext context,
-//   required String text,
-//   required Widget child,
-//   required PageLayout scaleFactor,
-// }) {
-//   return tooltipSpan(
-//     // tooltipkey: tooltipkey,
-//     context: context,
-//     text: text,
-//     child: child,
-//     border: false,
-//     // scaleFactor: scaleFactor,
-//   );
-// }
 
 WidgetSpan tooltipSpan({
   required BuildContext context,

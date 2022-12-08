@@ -85,10 +85,6 @@ class CoreCubit extends Cubit<CoreState> {
     emit(state.copyWith(activePageIndex: index));
   }
 
-  // Future<void> setPageController(PageController controller) async {
-  //   emit(state.copyWith(pageController: controller));
-  // }
-
   Future<void> setScaleFactor(PageLayout scaleFactor) async {
     emit(state.copyWith(pageLayout: scaleFactor));
   }

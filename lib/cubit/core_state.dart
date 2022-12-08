@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'core_cubit.dart';
 
 class CoreState {
@@ -20,8 +19,6 @@ class CoreState {
     this.visiblePages = const [],
     this.activePageIndex = 0,
     this.windowHeight = 0,
-    // this.places = const [],
-    // this.pageController,
   });
 
   CoreState copyWith({
