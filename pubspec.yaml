@@ -90,7 +90,8 @@ flutter:
     - assets/CV_en.pdf
     - assets/icons/gb.png
     - assets/icons/pl.png
-    - assets/svg1.svg
+    - assets/badges/project1.png
+    - assets/badges/project2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

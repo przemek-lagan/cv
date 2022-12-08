@@ -49,9 +49,10 @@
 
 
     "projects_title": "Projekty",
+    "projects_repository_button": "repozytorium",
+    "projects_app_button": "Pokaż",
     "projects_1_title": "Ta strona :)",
-    "projects_1_button": "repozytorium",
-    "project_1_button_link": "https://github.com/przemek-lagan/cv",
+    "project_1_repository_link": "https://github.com/przemek-lagan/cv",
     "projects_2_descritpion1": "Aplikacja rozwijana jako przyszły kanał komunikacji dla klientów lokalnej sieci restauracji.",
     "projects_2_descritpion2": "Obecnie w sklepie Google Play, w fazie wczesnych testów zamkniętych.",
     "projects_2_demo_info": "Demonstracja w przygotowaniu",
