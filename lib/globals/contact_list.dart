@@ -1,3 +1,4 @@
+import 'package:carbon_icons/carbon_icons.dart';
 import 'package:cv/cubit/core_cubit.dart';
 import 'package:cv/globals/enums.dart';
 import 'package:cv/pages/sections/shared/indent.dart';
@@ -34,7 +35,7 @@ class ContactList {
     actions = [
       ContactAction(
         tooltip: 'e-mail',
-        icon: const Icon(SimpleIcons.gmail),
+        icon: const Icon(CarbonIcons.email),
         link: t!.e_mail,
         onTap: () async {
           final String mailUrl = 'mailto:${t.e_mail}';

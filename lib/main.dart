@@ -23,14 +23,13 @@ class MyApp extends StatelessWidget {
       create: (context) => CoreCubit()..init(),
       child: BlocBuilder<CoreCubit, CoreState>(
         builder: (context, coreState) {
-
           ThemeData lightThemeData = lightTheme(coreState.pageLayout.textScale);
           ThemeData darkThemeData = darkTheme(coreState.pageLayout.textScale);
           return MaterialApp(
             // useInheritedMediaQuery: true,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            locale: coreState.en ? const Locale('en') : const Locale('pl'),
+            locale: coreState.gb ? const Locale('en') : const Locale('pl'),
             debugShowCheckedModeBanner: false,
             title: 'Przemysław Łagan',
             theme: lightThemeData,
