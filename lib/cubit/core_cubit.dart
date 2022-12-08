@@ -49,7 +49,7 @@ class CoreCubit extends Cubit<CoreState> {
   }
 
   Future<void> switchLanguage() async {
-    emit(state.copyWith(en: !state.en));
+    emit(state.copyWith(en: !state.gb));
   }
 
   Future<void> setPageLayout(BoxConstraints constraints) async {

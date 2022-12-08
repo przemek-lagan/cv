@@ -37,27 +37,28 @@ class _HomeAppBar extends StatelessWidget with PreferredSizeWidget {
                 child: RotatedBox(
                   quarterTurns: rotated ? 1 : 0,
                   child: Stack(
+                    clipBehavior: Clip.none,
                     alignment: AlignmentDirectional.center,
                     children: [
                       Positioned(
                         key: UniqueKey(),
-                        bottom: rotated ? 0 : 10,
-                        right: rotated ? 10 : 0,
-                        child: Text(
-                          coreState.en ? '🇵🇱' : '🇬🇧',
-                          style: TextStyle(
-                              color: Theme.of(context).disabledColor,
-                              fontSize: 20),
+                        bottom: rotated ? 0 : 12,
+                        right: rotated ? 10 : -4,
+                        child: Opacity(
+                          opacity: .4,
+                          child: Image.asset(
+                            coreState.gb
+                                ? 'assets/icons/pl.png'
+                                : 'assets/icons/gb.png',
+                            width: 24,
+                          ),
                         ),
                       ),
-                      Positioned(
-                        key: UniqueKey(),
-                        top: rotated ? 0 : 15,
-                        left: rotated ? 15 : 0,
-                        child: Text(
-                          coreState.en ? '🇬🇧' : '🇵🇱',
-                          style: const TextStyle(fontSize: 20),
-                        ),
+                      Image.asset(
+                        coreState.gb
+                            ? 'assets/icons/gb.png'
+                            : 'assets/icons/pl.png',
+                        width: 28,
                       ),
                     ],
                   ),

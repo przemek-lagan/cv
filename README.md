@@ -1,4 +1,14 @@
-# CV
+<H6 align="right">
+<a href="https://wakatime.com/badge/user/4f2825b2-86df-4f0a-9df0-dc0ec3feead1/project/08687ad0-8111-487d-997d-f83ab08a2ff9"><img src="https://wakatime.com/badge/user/4f2825b2-86df-4f0a-9df0-dc0ec3feead1/project/08687ad0-8111-487d-997d-f83ab08a2ff9.svg" alt="wakatime"></a></H6>
+
+
+
+
+# CV 
+
+
+
+
 
 Hello,
 

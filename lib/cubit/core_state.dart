@@ -3,7 +3,7 @@ part of 'core_cubit.dart';
 
 class CoreState {
   final ThemeMode? themeMode;
-  final bool en;
+  final bool gb;
   final PageLayout pageLayout;
   final ItemScrollController? itemScrollController;
   final ItemPositionsListener? itemPositionsListener;
@@ -13,13 +13,13 @@ class CoreState {
 
   CoreState({
     this.themeMode,
-    this.en = false,
+    this.gb = false,
     this.pageLayout = PageLayout.standard,
     this.itemScrollController,
     this.itemPositionsListener,
     this.visiblePages = const [],
     this.activePageIndex = 0,
-    this.windowHeight=0,
+    this.windowHeight = 0,
     // this.places = const [],
     // this.pageController,
   });
@@ -36,10 +36,11 @@ class CoreState {
   }) {
     return CoreState(
       themeMode: themeMode ?? this.themeMode,
-      en: en ?? this.en,
+      gb: en ?? gb,
       pageLayout: pageLayout ?? this.pageLayout,
       itemScrollController: itemScrollController ?? this.itemScrollController,
-      itemPositionsListener: itemPositionsListener ?? this.itemPositionsListener,
+      itemPositionsListener:
+          itemPositionsListener ?? this.itemPositionsListener,
       visiblePages: visiblePages ?? this.visiblePages,
       activePageIndex: activePageIndex ?? this.activePageIndex,
       windowHeight: windowHeight ?? this.windowHeight,
