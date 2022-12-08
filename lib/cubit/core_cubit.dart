@@ -33,32 +33,18 @@ class CoreCubit extends Cubit<CoreState> {
   }
 
   Future<void> initializeTheme(BuildContext context) async {
-    bool platformDarkMode =
-        MediaQuery.of(context).platformBrightness == Brightness.dark;
-    emit(state.copyWith(
-        themeMode: platformDarkMode ? ThemeMode.dark : ThemeMode.light));
+    if (state.themeMode == null) {
+      bool platformDarkMode =
+          MediaQuery.of(context).platformBrightness == Brightness.dark;
+      emit(state.copyWith(
+          themeMode: platformDarkMode ? ThemeMode.dark : ThemeMode.light));
+    }
   }
 
   Future<void> switchTheme() async {
     ThemeMode themeMode =
         state.themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
 
-    emit(state.copyWith(themeMode: themeMode));
-  }
-
-  Future<void> changeTheme(bool platformDarkMode,
-      {ThemeMode? themeMode}) async {
-    if (themeMode == null) {
-      if (state.themeMode == null) {
-        platformDarkMode
-            ? themeMode = ThemeMode.light
-            : themeMode = ThemeMode.dark;
-      } else if (state.themeMode == ThemeMode.dark) {
-        themeMode = ThemeMode.light;
-      } else {
-        themeMode = ThemeMode.dark;
-      }
-    }
     emit(state.copyWith(themeMode: themeMode));
   }
 
@@ -92,7 +78,7 @@ class CoreCubit extends Cubit<CoreState> {
     } else {
       pageLayout = PageLayout.wide4;
     }
-    emit(state.copyWith(pageLayout: pageLayout,windowHeight: height));
+    emit(state.copyWith(pageLayout: pageLayout, windowHeight: height));
   }
 
   Future<void> changeActivePageIndex(int index) async {

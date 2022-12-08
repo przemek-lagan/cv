@@ -6,7 +6,8 @@
     "start_my_title": "Junior Flutter Developer",
     "start_info": "Od wielu lat moim głównym hobby jest nauka nowych języków programowania i tworzenie progamów na własne potrzeby, a od marca 2022 zajmuję się przede wszystkim Flutterem.",
     "start_button": "Curriculum Vitae",
-    
+    "start_cv_link": "assets/assets/CV_pl.pdf",
+
     "about_title": "O mnie",
     "about_info1": "Rozpocząłem karierę jako inżynier chemik, jednak szybko odkryłem że pociąga mnie kodowanie, które wkrótce stało się moim ",
     "about_info1_tooltip_body": "hobby",
@@ -30,6 +31,8 @@
     "skills_cloud_tooltip3": "PS. Umiejętności \"wodolejstwo\" nie uwzględniłem, ponieważ przesłoniłaby ona całą resztę.",
     
     "skills_lang_title": "Języki obce",
+    "skills_lang0_title": "",
+    "skills_lang0_level": "",
     "skills_lang1_title": "język angielski",
     "skills_lang1_level": "zaawansowany",
     "skills_lang1_cert1": "EF SET English Certificate 81/100 (C2\u00A0Proficient)",
@@ -50,25 +53,24 @@
     "projects_1_button": "Repozytorium\nw przygotowaniu",
     "projects_2_descritpion1": "Aplikacja rozwijana jako przyszły kanał komunikacji dla klientów lokalnej sieci restauracji.",
     "projects_2_descritpion2": "Obecnie w sklepie Google Play, w fazie wczesnych testów zamkniętych.",
-    "projects_2_demo_info": "Demonstracja w przygotowaniu.",
+    "projects_2_demo_info": "Demonstracja w przygotowaniu",
     "projects_rest_title1": "Pozostałe",
-    "projects_rest_title2": "(demonstracja wybranych historycznych programów, napisanych bez żadnego poszanowania zasad programowania)",
+    "projects_rest_title2": "(demonstracja wybranych poprzednich programów)",
     "projects_rest_info": "W przygotowaniu",
 
     "contact_title": "Kontakt",
+    "contact_copy_tooltip": "skopiuj do schowka",
 
 
     "e_mail": "przemek.lagan.dev@gmail.com",
     "e_mail_copied": "skopiowano adres e-mail do schowka",
-    "phone": "telefon",
-    "phone_number": "+48 515 077 600",
     "whatsapp_link": "https://wa.me/48515077600",
     "whatsapp_link_short": "wa.me/48515077600",
     "github_name": "przemek-lagan",
     "github_link": "https://github.com/przemek-lagan",
     "github_link_short": "github.com/przemek-lagan",
     "linkedIn_link": "https://www.linkedin.com/in/przemysław-łagan-76259224b",
-    "linkedIn_link_short": "linkedin.com/in/plagan/",
+    "linkedIn_link_short": "linkedin.com/in/plagan",
     "messenger_link": "https://m.me/przemeklagan",
     "messenger_link_short": "m.me/przemeklagan"
 

@@ -1,14 +1,78 @@
 {
-    "about_me_title": "O mnie",
+    "fab_tooltip": "Contact",
 
-    "projects_title": "Projekty",
+    "start_title": "Home",
+    "start_hi": "Hi, I'm Przemek",
+    "start_my_title": "Junior Flutter Developer",
+    "start_info": "For many years, my main hobby has been learning new programming languages and creating progams for my own use, and since March 2022 I have been primarily involved in Flutter.",
+    "start_button": "Curriculum Vitae",
+    "start_cv_link": "assets/assets/CV_en.pdf",
 
-    "skills_title": "Umiejętności",
+    "about_title": "About me",
+    "about_info1": "I started my career as a chemical engineer, but soon discovered I was drawn to coding, which soon became my ",
+    "about_info1_tooltip_body": "hobby",
+    "about_info1_tooltip_message": "or rather obsession...",
+    "about_info2": "Looking for a way to develop a mobile application, I came across Flutter and decided to stay with it for a while.",
+    "about_expanded_tooltip": "show the text wall",
+    "about_expanded_info1": "That's how I began my adventure with ",
+    "about_expanded_info2a": "debugging",
+    "about_expanded_info2b": " programming, starting with automation of all sorts of calculation sheets using VBA, integrating Excel with AutoCAD and creating a web scraping program, that had multi-file database of several hundred MB kept in... ",
+    "about_expanded_info3_tooltip_body": "Excel",
+    "about_expanded_info4": " I quickly realized my mistake and switched to Visual Basic and then Python, using SQLite for local database support.",
+    "about_expanded_info5": "Unfortunately, all of the above programming adventures came to an end rather quickly, mainly due to lack of time for this ",
+    "about_expanded_info6a": "addiction",
+    "about_expanded_info6b": " hobby.",
 
-    "education_title": "Wykształcenie",
+    "about_info3": "In my spare time I rollerblade, try to play the piano, listen to dwarven power metal and create low quality rhymes.",
+    
+    "skills_title": "Skills",
+    "skills_cloud_tooltip1": "Skills were defined on a non-objective scale of a junior developer. The easier it is to spot one, the less I have to be ashamed of my level in it. Nevertheless, Uncle Google and Stack Overflow can always come in handy ;).",
+    "skills_cloud_tooltip2": "Skills used in the past are placed in parentheses - a refresher is required to use them.",
+    "skills_cloud_tooltip3": "PS. The \"waffling\" skill was not included, as it would obscure everything else.",
+    
+    "skills_lang_title": "Languages",
+    "skills_lang0_title": "Polish",
+    "skills_lang0_level": "native",
+    "skills_lang1_title": "English",
+    "skills_lang1_level": "advanced",
+    "skills_lang1_cert1": "EF SET English Certificate 81/100 (C2\u00A0Proficient)",
+    "skills_lang1_cert1_link": "https://www.efset.org/cert/mSSkU2",
+    "skills_lang1_cert1_link_descritpion": "show certificate",
+    "skills_lang1_cert2": "EF SET speaking test (beta) 18/30 (B2\u00A0Upper\u00A0Intermediate)",
+    "skills_goals_title": "On the radar",
+    "skills_goals_title2": "(education plans for spare time)",
+    "skills_goals_goal1": "REST API",
+    "skills_goals_goal2": "MariaDB / MySQL",
+    "skills_goals_goal3": "",
+    "skills_goals_goal4": "",
+    "skills_goals_goal5": "",
 
-    "contact_title": "Kontakt",
-    "e_mail": "przemek.lagan.dev@gmail.com"
+
+    "projects_title": "Projects",
+    "projects_1_title": "This website :)",
+    "projects_1_button": "Repository under development",
+    "projects_2_descritpion1": "The application is being developed as a future communication channel for customers of the local restaurant chain.",
+    "projects_2_descritpion2": "Currently on the Google Play store, in early closed tests.",
+    "projects_2_demo_info": "Demo in preparation",
+    "projects_rest_title1": "Others",
+    "projects_rest_title2": "(demonstration of selected past programs)",
+    "projects_rest_info": "Under construction",
+
+    "contact_title": "Contact",
+    "contact_copy_tooltip": "copy to clipboard",
+
+    "e_mail": "przemek.lagan.dev@gmail.com",
+    "e_mail_copied": "the e-mail adress has been copied to the clipboard",
+    "whatsapp_link": "https://wa.me/48515077600",
+    "whatsapp_link_short": "wa.me/48515077600",
+    "github_name": "przemek-lagan",
+    "github_link": "https://github.com/przemek-lagan",
+    "github_link_short": "github.com/przemek-lagan",
+    "linkedIn_link": "https://www.linkedin.com/in/przemysław-łagan-76259224b",
+    "linkedIn_link_short": "linkedin.com/in/plagan",
+    "messenger_link": "https://m.me/przemeklagan",
+    "messenger_link_short": "m.me/przemeklagan"
+
 
 
 }

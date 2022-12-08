@@ -20,7 +20,7 @@ class _NavigationDrawer extends StatelessWidget {
               ListView(
                 shrinkWrap: true,
                 children: [
-                  SizedBox(height: 32),
+                  const SizedBox(height: 32),
                   ...ContentList.pages
                       .map((page) => ListTile(
                             leading: page.icon,
@@ -38,7 +38,12 @@ class _NavigationDrawer extends StatelessWidget {
                               // style: Theme.of(context).textTheme.bodyText1,
                             ),
                             onTap: () {
-                              int targetIndex = ContentList.pages.indexOf(page);
+                              ContentPage tmpPage = ContentList.pages
+                                  .where(
+                                      (tmpPage) => tmpPage.title == page.title)
+                                  .first;
+                              int targetIndex =
+                                  ContentList.pages.indexOf(tmpPage);
                               int currentIndex = coreState.visiblePages[0];
                               int distance = (targetIndex - currentIndex).abs();
                               context
@@ -50,6 +55,7 @@ class _NavigationDrawer extends StatelessWidget {
                                       duration: Duration(
                                           milliseconds: 200 * distance + 1),
                                       curve: Curves.linear);
+
                               if (isDrawer) Navigator.of(context).pop();
                             },
                           ))

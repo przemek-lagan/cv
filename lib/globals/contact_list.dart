@@ -111,6 +111,16 @@ class ContactList {
                     action.link,
                     style: contactTextStyle,
                   ),
+                  const SizedBox(width: 16),
+                  IconButton(
+                    onPressed: () async {
+                      await Clipboard.setData(ClipboardData(text: action.link));
+                    },
+                    icon: const Icon(
+                      Icons.copy,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 16),
