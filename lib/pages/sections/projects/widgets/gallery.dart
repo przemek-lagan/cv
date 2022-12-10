@@ -99,19 +99,23 @@ class __GalleryDialogState extends State<_GalleryDialog> {
                   pow(context.read<CoreCubit>().state.pageLayout.widthfactor, 2)
                       .toDouble()),
           Expanded(
-              child: Stack(
-            alignment: AlignmentDirectional.topStart,
-            children: [
-              Image.asset('assets/${widget.path}/${index.toString()}.jpg'),
-              IconButton(
-                onPressed: () => Navigator.of(context).pop(),
-                icon: const Icon(
-                  Icons.cancel_outlined,
-                  size: 32,
+            child: Stack(
+              alignment: AlignmentDirectional.topStart,
+              children: [
+                Image.asset('assets/${widget.path}/${index.toString()}.jpg'),
+                CircleAvatar(
+                  backgroundColor: Colors.transparent,
+                  child: IconButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    icon: const Icon(
+                      Icons.cancel_outlined,
+                      size: 32,
+                    ),
+                  ),
                 ),
-              ),
-            ],
-          )),
+              ],
+            ),
+          ),
           SizedBox(
               width: 16 *
                   pow(context.read<CoreCubit>().state.pageLayout.widthfactor, 2)
