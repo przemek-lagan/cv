@@ -74,18 +74,22 @@ class __GalleryDialogState extends State<_GalleryDialog> {
       elevation: 0,
       backgroundColor: Colors.transparent,
       content: Row(
-        // alignment: Alignment.center,
-        // clipBehavior: Clip.none,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(width: 16),
-          IconButton(
-            padding: const EdgeInsets.only(left: 8),
-            onPressed: () => setState(() => index =
-                index == 1 ? widget.count : (index ?? widget.initialIndex) - 1),
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              size: 32,
+          CircleAvatar(
+            radius: 30,
+            backgroundColor:
+                Theme.of(context).scaffoldBackgroundColor.withOpacity(.5),
+            child: IconButton(
+              padding: const EdgeInsets.only(left: 8),
+              onPressed: () => setState(() => index = index == 1
+                  ? widget.count
+                  : (index ?? widget.initialIndex) - 1),
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                size: 32,
+              ),
             ),
           ),
           const SizedBox(width: 16),
@@ -93,7 +97,7 @@ class __GalleryDialogState extends State<_GalleryDialog> {
               child: Stack(
             alignment: AlignmentDirectional.topStart,
             children: [
-              Image.asset('assets/screenshots/project2/$index.jpg'),
+              Image.asset('assets/${widget.path}/${index.toString()}.jpg'),
               IconButton(
                 onPressed: () => Navigator.of(context).pop(),
                 icon: const Icon(
@@ -104,13 +108,19 @@ class __GalleryDialogState extends State<_GalleryDialog> {
             ],
           )),
           const SizedBox(width: 16),
-          IconButton(
-            padding: const EdgeInsets.only(left: 8),
-            onPressed: () => setState(() => index =
-                index == widget.count ? 1 : (index ?? widget.initialIndex) + 1),
-            icon: const Icon(
-              Icons.arrow_forward_ios,
-              size: 32,
+          CircleAvatar(
+            radius: 30,
+            backgroundColor:
+                Theme.of(context).scaffoldBackgroundColor.withOpacity(.5),
+            child: IconButton(
+              padding: const EdgeInsets.only(left: 8),
+              onPressed: () => setState(() => index = index == widget.count
+                  ? 1
+                  : (index ?? widget.initialIndex) + 1),
+              icon: const Icon(
+                Icons.arrow_forward_ios,
+                size: 32,
+              ),
             ),
           ),
           const SizedBox(width: 16),

@@ -12,6 +12,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 part 'widgets/app_button.dart';
 part 'widgets/repository_button.dart';
 part 'widgets/gallery.dart';
+part 'widgets/project_card.dart';
 
 class Projects extends StatelessWidget {
   const Projects({
@@ -33,13 +34,13 @@ class Projects extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  ProjectCard(
+                  _ProjectCard(
                     t!.projects_1_title,
                     badge: 'project1',
                     repositoryUrl: t.project_1_repository_link,
                   ),
                   SizedBox(height: 32 * coreState.pageLayout.textScale),
-                  ProjectCard(
+                  _ProjectCard(
                     "Bajlaga",
                     badge: 'project2',
                     child: Column(
@@ -62,23 +63,24 @@ class Projects extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 16),
-                        const _Gallery(path: 'screenshots/project2', count: 5),
-                        // Align(
-                        //   alignment: Alignment.centerRight,
-                        //   child: ElevatedButton(
-                        //     style: ButtonStyle(
-                        //       backgroundColor: MaterialStateProperty.all<Color>(
-                        //           Theme.of(context).primaryColor),
-                        //     ),
-                        //     onPressed: () => context
-                        //         .read<CoreCubit>()
-                        //         .setActiveSubpage(const Bajlaga()),
-                        //     child: Padding(
-                        //       padding: const EdgeInsets.all(8.0),
-                        //       child: Text(t.projects_2_demo_info),
-                        //     ),
-                        //   ),
-                        // ),
+                        ElevatedButton.icon(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Theme.of(context).primaryColor),
+                          ),
+                          onPressed: () async => await launchUrlString(
+                              'https://www.youtube.com/watch?v=1Lcq2KbQbAs'),
+                          label: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              t.projects_2_demo_info,
+                              style: bodyText,
+                            ),
+                          ),
+                          icon: const Icon(CarbonIcons.logo_youtube),
+                        ),
+                        const SizedBox(height: 16),
+                        const _Gallery(path: 'project2', count: 5),
                       ],
                     ),
                   ),
@@ -138,70 +140,6 @@ class Projects extends StatelessWidget {
           ],
         );
       },
-    );
-  }
-}
-
-class ProjectCard extends StatelessWidget {
-  final String title;
-  final String? badge;
-  final String? repositoryUrl;
-  final String? appUrl;
-  final Widget? child;
-  const ProjectCard(
-    this.title, {
-    this.badge,
-    this.repositoryUrl,
-    this.appUrl,
-    this.child,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      elevation: 20,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Stack(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.startTitle,
-                ),
-                if (child != null) ...[
-                  const SizedBox(height: 16),
-                  child!,
-                ],
-                if (repositoryUrl != null || appUrl != null)
-                  const SizedBox(height: 32),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    if (repositoryUrl != null)
-                      _RepositoryButton(repositoryUrl!),
-                    if (repositoryUrl != null && appUrl != null)
-                      const SizedBox(width: 16),
-                    if (appUrl != null) _AppButton(appUrl!),
-                  ],
-                )
-              ],
-            ),
-            if (badge != null)
-              Positioned(
-                top: 0,
-                right: 0,
-                child: Image.asset(
-                  'assets/badges/$badge.png',
-                ),
-              ),
-          ],
-        ),
-      ),
     );
   }
 }
