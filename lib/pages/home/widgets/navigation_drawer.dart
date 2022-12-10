@@ -58,9 +58,10 @@ class _NavigationDrawer extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              Wrap(
-                  alignment: WrapAlignment.center,
-                  children: ContactList.buttonActions),
+              if (coreState.pageLayout.pageType == PageWidthType.wide)
+                Wrap(
+                    alignment: WrapAlignment.center,
+                    children: ContactList.buttonActions),
               const SizedBox(height: 32)
             ],
           ),

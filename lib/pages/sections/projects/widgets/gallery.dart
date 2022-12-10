@@ -85,15 +85,13 @@ class __GalleryDialogState extends State<_GalleryDialog> {
             backgroundColor:
                 Theme.of(context).scaffoldBackgroundColor.withOpacity(.5),
             child: IconButton(
+              iconSize:
+                  32 * context.read<CoreCubit>().state.pageLayout.widthfactor,
               padding: const EdgeInsets.only(left: 8),
               onPressed: () => setState(() => index = index == 1
                   ? widget.count
                   : (index ?? widget.initialIndex) - 1),
-              icon: Icon(
-                Icons.arrow_back_ios,
-                size:
-                    32 * context.read<CoreCubit>().state.pageLayout.widthfactor,
-              ),
+              icon: const Icon(Icons.arrow_back_ios),
             ),
           ),
           SizedBox(
@@ -123,15 +121,13 @@ class __GalleryDialogState extends State<_GalleryDialog> {
             backgroundColor:
                 Theme.of(context).scaffoldBackgroundColor.withOpacity(.5),
             child: IconButton(
+              iconSize:
+                  32 * context.read<CoreCubit>().state.pageLayout.widthfactor,
               padding: const EdgeInsets.only(left: 8),
               onPressed: () => setState(() => index = index == widget.count
                   ? 1
                   : (index ?? widget.initialIndex) + 1),
-              icon: Icon(
-                Icons.arrow_forward_ios,
-                size:
-                    32 * context.read<CoreCubit>().state.pageLayout.widthfactor,
-              ),
+              icon: const Icon(Icons.arrow_forward_ios),
             ),
           ),
           SizedBox(
