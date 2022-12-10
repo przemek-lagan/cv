@@ -4,6 +4,11 @@ import 'package:cv/globals/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'core_cubit.freezed.dart';
+part 'core_cubit.g.dart';
+
 part 'core_state.dart';
 
 class CoreCubit extends Cubit<CoreState> {
@@ -85,8 +90,4 @@ class CoreCubit extends Cubit<CoreState> {
     emit(state.copyWith(pageLayout: scaleFactor));
   }
 
-  Future<void> setActiveSubpage(Widget? subpage) async {
-    emit(
-        state.copyWith(activeSubpage: subpage, subpageActive: subpage != null));
-  }
 }
