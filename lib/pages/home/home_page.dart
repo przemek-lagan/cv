@@ -34,9 +34,7 @@ class HomePage extends StatelessWidget {
         builder: (context, coreState) {
           return coreState.pageLayout.pageType == PageWidthType.tooSmall
               ? const NoSpaceWarning()
-              : coreState.subpageActive
-                  ? coreState.activeSubpage!
-                  : Scaffold(
+              :  Scaffold(
                       appBar: coreState.pageLayout.pageType ==
                               PageWidthType.standard
                           ? const _HomeAppBar()

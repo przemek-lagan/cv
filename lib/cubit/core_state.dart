@@ -1,52 +1,19 @@
 part of 'core_cubit.dart';
 
-class CoreState {
-  final ThemeMode? themeMode;
-  final bool gb;
-  final PageLayout pageLayout;
-  final ItemScrollController? itemScrollController;
-  final ItemPositionsListener? itemPositionsListener;
-  final List<int> visiblePages;
-
-  final double windowHeight;
-
-  final bool subpageActive;
-  final Widget? activeSubpage;
-
-  CoreState({
-    this.themeMode,
-    this.gb = false,
-    this.pageLayout = PageLayout.standard,
-    this.itemScrollController,
-    this.itemPositionsListener,
-    this.visiblePages = const [],
-    this.windowHeight = 0,
-    this.subpageActive = false,
-    this.activeSubpage,
-  });
-
-  CoreState copyWith({
+@freezed
+class CoreState with _$CoreState {
+  const CoreState._();
+  @JsonSerializable(fieldRename: FieldRename.snake)
+  const factory CoreState({
     ThemeMode? themeMode,
-    bool? gb,
-    PageLayout? pageLayout,
-    ItemScrollController? itemScrollController,
-    ItemPositionsListener? itemPositionsListener,
-    List<int>? visiblePages,
-    double? windowHeight,
-    bool? subpageActive,
-    Widget? activeSubpage,
-  }) {
-    return CoreState(
-      themeMode: themeMode ?? this.themeMode,
-      gb: gb ?? this.gb,
-      pageLayout: pageLayout ?? this.pageLayout,
-      itemScrollController: itemScrollController ?? this.itemScrollController,
-      itemPositionsListener:
-          itemPositionsListener ?? this.itemPositionsListener,
-      visiblePages: visiblePages ?? this.visiblePages,
-      windowHeight: windowHeight ?? this.windowHeight,
-      subpageActive: subpageActive ?? this.subpageActive,
-      activeSubpage: activeSubpage ?? this.activeSubpage,
-    );
-  }
+    @Default(false) bool gb,
+    @Default(PageLayout.standard) PageLayout pageLayout,
+    @JsonKey(ignore: true) ItemScrollController? itemScrollController,
+    @JsonKey(ignore: true) ItemPositionsListener? itemPositionsListener,
+    @Default([]) List<int> visiblePages,
+    @Default(0) double windowHeight,
+  }) = _CoreState;
+
+  factory CoreState.fromJson(Map<String, Object?> json) =>
+      _$CoreStateFromJson(json);
 }
