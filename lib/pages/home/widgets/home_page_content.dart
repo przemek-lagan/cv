@@ -11,7 +11,7 @@ class _HomePageContent extends StatelessWidget {
     List<int> visiblePages = context.read<CoreCubit>().state.visiblePages;
     if (visiblePages.isNotEmpty) initialScrollIndex = visiblePages[0];
     return ScrollablePositionedList.builder(
-      initialScrollIndex: 3, // TODO initialScrollIndex,
+      initialScrollIndex: initialScrollIndex,
       shrinkWrap: true,
       itemCount: ContentList.pages.length,
       itemScrollController:
