@@ -31,8 +31,6 @@ class _SkillCloud extends StatelessWidget {
                       const WidgetSpan(child: SizedBox()),
                       const TextSpan(text: '\n'),
                       TextSpan(text: t!.skills_cloud_tooltip2),
-                      const TextSpan(text: '\n\n'),
-                      TextSpan(text: t!.skills_cloud_tooltip3),
                     ])),
               ),
             ),

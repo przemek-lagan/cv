@@ -7,8 +7,11 @@ class CoreState {
   final ItemScrollController? itemScrollController;
   final ItemPositionsListener? itemPositionsListener;
   final List<int> visiblePages;
-  final int activePageIndex;
+
   final double windowHeight;
+
+  final bool subpageActive;
+  final Widget? activeSubpage;
 
   CoreState({
     this.themeMode,
@@ -17,30 +20,33 @@ class CoreState {
     this.itemScrollController,
     this.itemPositionsListener,
     this.visiblePages = const [],
-    this.activePageIndex = 0,
     this.windowHeight = 0,
+    this.subpageActive = false,
+    this.activeSubpage,
   });
 
   CoreState copyWith({
     ThemeMode? themeMode,
-    bool? en,
+    bool? gb,
     PageLayout? pageLayout,
     ItemScrollController? itemScrollController,
     ItemPositionsListener? itemPositionsListener,
     List<int>? visiblePages,
-    int? activePageIndex,
     double? windowHeight,
+    bool? subpageActive,
+    Widget? activeSubpage,
   }) {
     return CoreState(
       themeMode: themeMode ?? this.themeMode,
-      gb: en ?? gb,
+      gb: gb ?? this.gb,
       pageLayout: pageLayout ?? this.pageLayout,
       itemScrollController: itemScrollController ?? this.itemScrollController,
       itemPositionsListener:
           itemPositionsListener ?? this.itemPositionsListener,
       visiblePages: visiblePages ?? this.visiblePages,
-      activePageIndex: activePageIndex ?? this.activePageIndex,
       windowHeight: windowHeight ?? this.windowHeight,
+      subpageActive: subpageActive ?? this.subpageActive,
+      activeSubpage: activeSubpage ?? this.activeSubpage,
     );
   }
 }

@@ -23,6 +23,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ContentList.init(context);
+    ContactList.init(context);
     context.read<CoreCubit>().initializeTheme(context);
     var t = AppLocalizations.of(context);
     return LayoutBuilder(
@@ -30,37 +32,37 @@ class HomePage extends StatelessWidget {
       context.read<CoreCubit>().setPageLayout(constraints);
       return BlocBuilder<CoreCubit, CoreState>(
         builder: (context, coreState) {
-          ContentList.init(context);
-          ContactList.init(context);
           return coreState.pageLayout.pageType == PageWidthType.tooSmall
               ? const NoSpaceWarning()
-              : Scaffold(
-                  appBar:
-                      coreState.pageLayout.pageType == PageWidthType.standard
+              : coreState.subpageActive
+                  ? coreState.activeSubpage!
+                  : Scaffold(
+                      appBar: coreState.pageLayout.pageType ==
+                              PageWidthType.standard
                           ? const _HomeAppBar()
                           : null,
-                  drawer:
-                      coreState.pageLayout.pageType == PageWidthType.standard
+                      drawer: coreState.pageLayout.pageType ==
+                              PageWidthType.standard
                           ? const Drawer(
                               child: _NavigationDrawer(),
                             )
                           : null,
-                  floatingActionButtonLocation:
-                      FloatingActionButtonLocation.endFloat,
-                  floatingActionButton:
-                      coreState.pageLayout.pageType == PageWidthType.wide
-                          ? null
-                          : SpeedDial(
-                              tooltip: t!.fab_tooltip,
-                              icon: Icons.phone_outlined,
-                              activeIcon: Icons.close,
-                              children: ContactList.fabActions,
-                              spacing: 16,
-                              childPadding: const EdgeInsets.all(8),
-                              childrenButtonSize: const Size(66.0, 66.0),
-                            ),
-                  body: const _HomePageBody(),
-                );
+                      floatingActionButtonLocation:
+                          FloatingActionButtonLocation.endFloat,
+                      floatingActionButton:
+                          coreState.pageLayout.pageType == PageWidthType.wide
+                              ? null
+                              : SpeedDial(
+                                  tooltip: t!.fab_tooltip,
+                                  icon: Icons.phone_outlined,
+                                  activeIcon: Icons.close,
+                                  children: ContactList.fabActions,
+                                  spacing: 16,
+                                  childPadding: const EdgeInsets.all(8),
+                                  childrenButtonSize: const Size(66.0, 66.0),
+                                ),
+                      body: const _HomePageBody(),
+                    );
         },
       );
     });
