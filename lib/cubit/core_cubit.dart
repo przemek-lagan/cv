@@ -49,7 +49,7 @@ class CoreCubit extends Cubit<CoreState> {
   }
 
   Future<void> switchLanguage() async {
-    emit(state.copyWith(en: !state.gb));
+    emit(state.copyWith(gb: !state.gb));
   }
 
   Future<void> setPageLayout(BoxConstraints constraints) async {
@@ -81,11 +81,12 @@ class CoreCubit extends Cubit<CoreState> {
     emit(state.copyWith(pageLayout: pageLayout, windowHeight: height));
   }
 
-  Future<void> changeActivePageIndex(int index) async {
-    emit(state.copyWith(activePageIndex: index));
-  }
-
   Future<void> setScaleFactor(PageLayout scaleFactor) async {
     emit(state.copyWith(pageLayout: scaleFactor));
+  }
+
+  Future<void> setActiveSubpage(Widget? subpage) async {
+    emit(
+        state.copyWith(activeSubpage: subpage, subpageActive: subpage != null));
   }
 }

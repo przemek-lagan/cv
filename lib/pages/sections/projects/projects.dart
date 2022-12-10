@@ -11,6 +11,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 part 'widgets/app_button.dart';
 part 'widgets/repository_button.dart';
+part 'widgets/gallery.dart';
 
 class Projects extends StatelessWidget {
   const Projects({
@@ -44,24 +45,40 @@ class Projects extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(t.projects_2_descritpion1,
+                        Text(t.projects_2_description1,
                             style: Theme.of(context).textTheme.bodyText1),
-                        Text(t.projects_2_descritpion2,
+                        Text(t.projects_2_description2,
                             style: Theme.of(context).textTheme.bodyText1),
                         const SizedBox(height: 16),
-                        Align(
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  Theme.of(context).primaryColor),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(t.projects_2_description3,
+                                style: Theme.of(context).textTheme.bodyText1),
+                            Flexible(
+                              child: Text(t.projects_2_description3a,
+                                  style: Theme.of(context).textTheme.bodyText1),
                             ),
-                            onPressed: null,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(t.projects_2_demo_info),
-                            ),
-                          ),
+                          ],
                         ),
+                        const SizedBox(height: 16),
+                        const _Gallery(path: 'screenshots/project2', count: 5),
+                        // Align(
+                        //   alignment: Alignment.centerRight,
+                        //   child: ElevatedButton(
+                        //     style: ButtonStyle(
+                        //       backgroundColor: MaterialStateProperty.all<Color>(
+                        //           Theme.of(context).primaryColor),
+                        //     ),
+                        //     onPressed: () => context
+                        //         .read<CoreCubit>()
+                        //         .setActiveSubpage(const Bajlaga()),
+                        //     child: Padding(
+                        //       padding: const EdgeInsets.all(8.0),
+                        //       child: Text(t.projects_2_demo_info),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),

@@ -25,10 +25,10 @@
 
     "about_info3": "W wolnych chwilach jeżdżę na rolkach, próbuję grać na pianinie, słucham krasnoludzkiego power metalu i tworzę rymy niskich lotów.",
     
+
     "skills_title": "Umiejętności",
     "skills_cloud_tooltip1": "Umiejętności określono w nieobiektywnej skali początkującego developera. Im łatwiej którąś zauważyć, tym mniej się muszę wstydzić jej znajomości. Niemniej jednak wujek Google i Stack Overflow zawsze mogą się przydać ;).",
     "skills_cloud_tooltip2": "W nawiasach umiejętności używane w przeszłości - wymagane jest ich odświeżenie.",
-    "skills_cloud_tooltip3": "PS. Umiejętności \"wodolejstwo\" nie uwzględniłem, ponieważ przesłoniłaby ona całą resztę.",
     
     "skills_lang_title": "Języki obce",
     "skills_lang0_title": "",
@@ -41,10 +41,10 @@
     "skills_lang1_cert2": "EF SET speaking test (beta) 18/30 (B2\u00A0Upper\u00A0Intermediate)",
     "skills_goals_title": "Na celowniku",
     "skills_goals_title2": "(plany edukacyjne na najbliższe wolne chwile)",
-    "skills_goals_goal1": "REST API",
+    "skills_goals_goal1": "",
     "skills_goals_goal2": "MariaDB / MySQL",
     "skills_goals_goal3": "",
-    "skills_goals_goal4": "",
+    "skills_goals_goal4": "FCM",
     "skills_goals_goal5": "",
 
 
@@ -53,12 +53,17 @@
     "projects_app_button": "Pokaż",
     "projects_1_title": "Ta strona :)",
     "project_1_repository_link": "https://github.com/przemek-lagan/cv",
-    "projects_2_descritpion1": "Aplikacja rozwijana jako przyszły kanał komunikacji dla klientów lokalnej sieci restauracji.",
-    "projects_2_descritpion2": "Obecnie w sklepie Google Play, w fazie wczesnych testów zamkniętych.",
-    "projects_2_demo_info": "Demonstracja w przygotowaniu",
+    "projects_2_description1": "Aplikacja rozwijana jako przyszły kanał komunikacji dla klientów lokalnej sieci restauracji.",
+    "projects_2_description2": "Obecnie w sklepie Google Play, w fazie wczesnych testów zamkniętych.",
+    "projects_2_description3": "Wykorzystuje m.in.: ",
+    "projects_2_description3a": "Firebase, Cloud Functions, FCM (w\u00A0implementacji).",
+    "projects_2_demo_info": "Demonstracja",
+    "projects_2_demo1": "Zrzuty ekranu",
+
     "projects_rest_title1": "Pozostałe",
     "projects_rest_title2": "(demonstracja wybranych poprzednich programów)",
     "projects_rest_info": "W przygotowaniu",
+
 
     "contact_title": "Kontakt",
     "contact_copy_tooltip": "skopiuj do schowka",
