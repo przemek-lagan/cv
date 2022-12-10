@@ -76,9 +76,12 @@ class __GalleryDialogState extends State<_GalleryDialog> {
       content: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(width: 16),
+          SizedBox(
+              width: 16 *
+                  pow(context.read<CoreCubit>().state.pageLayout.widthfactor, 2)
+                      .toDouble()),
           CircleAvatar(
-            radius: 30,
+            radius: 30 * context.read<CoreCubit>().state.pageLayout.widthfactor,
             backgroundColor:
                 Theme.of(context).scaffoldBackgroundColor.withOpacity(.5),
             child: IconButton(
@@ -86,13 +89,17 @@ class __GalleryDialogState extends State<_GalleryDialog> {
               onPressed: () => setState(() => index = index == 1
                   ? widget.count
                   : (index ?? widget.initialIndex) - 1),
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_back_ios,
-                size: 32,
+                size:
+                    32 * context.read<CoreCubit>().state.pageLayout.widthfactor,
               ),
             ),
           ),
-          const SizedBox(width: 16),
+          SizedBox(
+              width: 16 *
+                  pow(context.read<CoreCubit>().state.pageLayout.widthfactor, 2)
+                      .toDouble()),
           Expanded(
               child: Stack(
             alignment: AlignmentDirectional.topStart,
@@ -107,9 +114,12 @@ class __GalleryDialogState extends State<_GalleryDialog> {
               ),
             ],
           )),
-          const SizedBox(width: 16),
+          SizedBox(
+              width: 16 *
+                  pow(context.read<CoreCubit>().state.pageLayout.widthfactor, 2)
+                      .toDouble()),
           CircleAvatar(
-            radius: 30,
+            radius: 30 * context.read<CoreCubit>().state.pageLayout.widthfactor,
             backgroundColor:
                 Theme.of(context).scaffoldBackgroundColor.withOpacity(.5),
             child: IconButton(
@@ -117,13 +127,17 @@ class __GalleryDialogState extends State<_GalleryDialog> {
               onPressed: () => setState(() => index = index == widget.count
                   ? 1
                   : (index ?? widget.initialIndex) + 1),
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_forward_ios,
-                size: 32,
+                size:
+                    32 * context.read<CoreCubit>().state.pageLayout.widthfactor,
               ),
             ),
           ),
-          const SizedBox(width: 16),
+          SizedBox(
+              width: 16 *
+                  pow(context.read<CoreCubit>().state.pageLayout.widthfactor, 2)
+                      .toDouble()),
         ],
       ),
     );
