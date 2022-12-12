@@ -86,8 +86,8 @@ class CoreCubit extends Cubit<CoreState> {
     emit(state.copyWith(pageLayout: pageLayout, windowHeight: height));
   }
 
-  Future<void> setScaleFactor(PageLayout scaleFactor) async {
-    emit(state.copyWith(pageLayout: scaleFactor));
+  Future<void> setScaleFactor(PageLayout pageLayout) async {
+    emit(state.copyWith(pageLayout: pageLayout));
   }
 
 }
