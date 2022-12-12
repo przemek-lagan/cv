@@ -46,17 +46,18 @@ class _AboutExpandableState extends State<_AboutExpandable> {
                                     ? 1.5
                                     : 1)),
                     TextSpan(text: t.about_expanded_info2b),
-                    tooltipSpan(
-                      context: context,
-                      child: t.about_expanded_info3_tooltip_body,
-                      tooltip: ClipRRect(
-                        borderRadius: BorderRadius.circular(32),
-                        child: Image.asset('assets/images/facepalm.jpg',
-                            fit: BoxFit.fill),
-                      ),
-                      textStyle: Theme.of(context).textTheme.bodyText1!,
-                      border: false,
-                    ),
+                    TextSpan(text: t!.about_expanded_info3_tooltip_body),
+                    // tooltipSpan(
+                    //   context: context,
+                    //   child: t.about_expanded_info3_tooltip_body,
+                    //   tooltip: ClipRRect(
+                    //     borderRadius: BorderRadius.circular(32),
+                    //     child: Image.asset('assets/images/facepalm.jpg',
+                    //         fit: BoxFit.fill),
+                    //   ),
+                    //   textStyle: Theme.of(context).textTheme.bodyText1!,
+                    //   border: false,
+                    // ),
                     const TextSpan(text: '.'),
                     TextSpan(text: t.about_expanded_info4),
                     const TextSpan(

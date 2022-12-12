@@ -33,15 +33,16 @@ class About extends StatelessWidget {
                   children: [
                     indentSpan(coreState.pageLayout),
                     TextSpan(text: t!.about_info1),
-                    tooltipSpan(
-                      context: context,
-                      child: t.about_info1_tooltip_body,
-                      tooltip: Text.rich(
-                        style: Theme.of(context).textTheme.bodyText1,
-                        TextSpan(text: t.about_info1_tooltip_message),
-                      ),
-                      textStyle: Theme.of(context).textTheme.bodyText1!,
-                    ),
+                    TextSpan(text: t.about_info1_tooltip_body),
+                    // tooltipSpan(
+                    //   context: context,
+                    //   child: t.about_info1_tooltip_body,
+                    //   tooltip: Text.rich(
+                    //     style: Theme.of(context).textTheme.bodyText1,
+                    //     TextSpan(text: t.about_info1_tooltip_message),
+                    //   ),
+                    //   textStyle: Theme.of(context).textTheme.bodyText1!,
+                    // ),
                     const TextSpan(text: '.\n'),
                     //
                     WidgetSpan(
